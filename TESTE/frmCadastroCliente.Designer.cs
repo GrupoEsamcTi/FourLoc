@@ -410,7 +410,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
-            this.Text = "frmCadastroCliente";
+            this.Text = "Cadastro Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

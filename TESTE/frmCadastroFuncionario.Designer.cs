@@ -413,7 +413,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroFuncionario";
-            this.Text = "frmCadastroFuncionario";
+            this.Text = "Cadastro Funcionario";
             this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
