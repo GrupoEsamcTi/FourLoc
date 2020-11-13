@@ -338,7 +338,7 @@
             this.bttPesq.Name = "bttPesq";
             this.bttPesq.Size = new System.Drawing.Size(57, 23);
             this.bttPesq.TabIndex = 2;
-            this.bttPesq.Text = "Pesq";
+            this.bttPesq.Text = "Pesq.";
             this.bttPesq.UseVisualStyleBackColor = true;
             this.bttPesq.Click += new System.EventHandler(this.bttPesq_Click_1);
             // 
@@ -413,7 +413,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroFuncionario";
-            this.Text = "frmCadastroFuncionario";
+            this.Text = "Cadastro Funcionario";
             this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

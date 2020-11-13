@@ -340,6 +340,7 @@
             this.bttCad.TabIndex = 62;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
+            this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
             // 
             // bttExcluir
             // 
@@ -410,7 +411,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
-            this.Text = "frmCadastroCliente";
+            this.Text = "Cadastro Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
