@@ -340,7 +340,7 @@
             this.bttCad.TabIndex = 62;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
-            this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
+           
             // 
             // bttExcluir
             // 
