@@ -340,6 +340,7 @@
             this.bttCad.TabIndex = 62;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
+            this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
             // 
             // bttExcluir
             // 
@@ -349,6 +350,7 @@
             this.bttExcluir.TabIndex = 63;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
             // 
             // bttAtualizar
             // 
@@ -358,6 +360,7 @@
             this.bttAtualizar.TabIndex = 64;
             this.bttAtualizar.Text = "Atualizar";
             this.bttAtualizar.UseVisualStyleBackColor = true;
+            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
             // 
             // bttPesq
             // 
