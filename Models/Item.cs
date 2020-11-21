@@ -10,6 +10,7 @@ namespace Models
     {
         public int CdFilme { get; set; }
 
+        public int CdGenero { get; set; }
         public int CdBarras { get; set; }
 
         public string DsTitulo { get; set; }

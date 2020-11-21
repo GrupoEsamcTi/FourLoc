@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArtista.Designer.cs">
+      <DependentUpon>frmArtista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +64,29 @@
     <Compile Include="frmCadastroFuncionario.Designer.cs">
       <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucao.Designer.cs">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFilme.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFilme.Designer.cs">
       <DependentUpon>frmFilme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenero.Designer.cs">
+      <DependentUpon>frmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
