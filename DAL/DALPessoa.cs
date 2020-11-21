@@ -99,7 +99,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_FUNCIONARIOS";
+            string sql = "SELECT CODIGO_F,NOME_F,CPF_FSTATUS_F FROM TBL_FUNCIONARIOS";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -111,23 +111,10 @@ namespace DAL
                 while (dr.Read())
                 {
 
-
-
                     objPessoa = new Pessoa();
                     objPessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_F"]);
                     objPessoa.NmPessoa = dr["NOME_F"].ToString();
-                    objPessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC_F"]);
-                    objPessoa.DsSexo = Convert.ToChar(dr["SEXO_F"]);
-                    objPessoa.DsEstadoCivil = Convert.ToChar(dr["ESTADO_CIVIL_F"]);
-                    objPessoa.NrRG = dr["RG_F"].ToString();
                     objPessoa.NrCPF = dr["CPF_F"].ToString();
-                    objPessoa.DsEndereco = dr["ENDERECO_F"].ToString();
-                    objPessoa.DsCidade = dr["CIDADE_F"].ToString();
-                    objPessoa.DsCEP = dr["CEP_F"].ToString();
-                    objPessoa.DsEstado = dr["ESTADO_F"].ToString();
-                    objPessoa.NrTelefone = dr["TELEFONE_F"].ToString();
-                    objPessoa.NrCelular = dr["CELULAR_F"].ToString();
-                    objPessoa.DsEmail = dr["EMAIL_F"].ToString();
                     objPessoa.DsStatus = dr["STATUS_F"].ToString();
 
                     listaPessoas.Add(objPessoa);
@@ -199,7 +186,7 @@ namespace DAL
         }
 
 
-        public List<Pessoa> ListarFuncionarioFiltros(string nome, string email)
+        public List<Pessoa> ListarFuncionarioFiltros(string cod, string cpf)
         {
             List<Pessoa> listaPessoas = new List<Pessoa>();
 
@@ -207,11 +194,11 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_FUNCIONARIOS WHERE NOME_F LIKE @nome and EMAIL_F LIKE @email";
+            string sql = "SELECT * FROM TBL_FUNCIONARIOS WHERE CODIGO_F LIKE @cod and CPF_F LIKE @cpf";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
-            cmd.Parameters.AddWithValue("@email", $"%{email}%");
+            cmd.Parameters.AddWithValue("@cod", $"%{cod}%");
+            cmd.Parameters.AddWithValue("@cpf", $"%{cpf}%");
 
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -432,7 +419,7 @@ namespace DAL
         }
 
 
-        public List<Pessoa> ListarClienteFiltros(string nome, string email)
+        public List<Pessoa> ListarClienteFiltros(string cod, string cpf)
         {
             List<Pessoa> listaPessoas = new List<Pessoa>();
 
@@ -440,11 +427,11 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_CLIENTES WHERE NOME_C LIKE @nome and EMAIL_C LIKE @email";
+            string sql = "SELECT * FROM TBL_CLIENTES WHERE CODIGO_C LIKE @cod and CPF_C LIKE @cpf";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
-            cmd.Parameters.AddWithValue("@email", $"%{email}%");
+            cmd.Parameters.AddWithValue("@cod", $"%{cod}%");
+            cmd.Parameters.AddWithValue("@cpf", $"%{cpf}%");
 
             SqlDataReader dr = cmd.ExecuteReader();
 

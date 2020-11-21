@@ -51,6 +51,7 @@ namespace TESTE
         private void CarregarFuncionario()
         {
             DALPessoa pDAL = new DALPessoa();
+            dgvFuncionario.DataSource = pDAL.ListarFuncionario();
         }
 
       

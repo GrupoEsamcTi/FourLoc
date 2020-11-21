@@ -63,6 +63,14 @@
             this.bttAtualizar = new System.Windows.Forms.Button();
             this.bttExcluir = new System.Windows.Forms.Button();
             this.bttCad = new System.Windows.Forms.Button();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DsStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -372,11 +380,61 @@
             this.bttCad.UseVisualStyleBackColor = true;
             this.bttCad.Click += new System.EventHandler(this.bttCad_Click_1);
             // 
+            // dgvFuncionario
+            // 
+            this.dgvFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CdPessoa,
+            this.NmPessoa,
+            this.NrCPF,
+            this.DsStatus});
+            this.dgvFuncionario.Location = new System.Drawing.Point(52, 326);
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.Size = new System.Drawing.Size(449, 107);
+            this.dgvFuncionario.TabIndex = 22;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(554, 33);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(508, 400);
+            this.dataGridView2.TabIndex = 23;
+            // 
+            // CdPessoa
+            // 
+            this.CdPessoa.DataPropertyName = "CdPessoa";
+            this.CdPessoa.HeaderText = "Código";
+            this.CdPessoa.Name = "CdPessoa";
+            // 
+            // NmPessoa
+            // 
+            this.NmPessoa.DataPropertyName = "NmPessoa";
+            this.NmPessoa.HeaderText = "Nome";
+            this.NmPessoa.Name = "NmPessoa";
+            // 
+            // NrCPF
+            // 
+            this.NrCPF.DataPropertyName = "NrCPF";
+            this.NrCPF.HeaderText = "CPF";
+            this.NrCPF.Name = "NrCPF";
+            // 
+            // DsStatus
+            // 
+            this.DsStatus.DataPropertyName = "DsStatus";
+            this.DsStatus.HeaderText = "Status";
+            this.DsStatus.Name = "DsStatus";
+            // 
             // frmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 331);
+            this.ClientSize = new System.Drawing.Size(1104, 467);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.bttAtualizar);
             this.Controls.Add(this.bttExcluir);
@@ -415,6 +473,8 @@
             this.Name = "frmCadastroFuncionario";
             this.Text = "Cadastro Funcionario";
             this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +517,11 @@
         private System.Windows.Forms.Button bttAtualizar;
         private System.Windows.Forms.Button bttExcluir;
         private System.Windows.Forms.Button bttCad;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CdPessoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NmPessoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrCPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DsStatus;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
     }
 }

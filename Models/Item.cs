@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Produto
+    class Item
     {
-        public int CdProduto { get; set; }
+        public int CdFilme { get; set; }
 
         public int CdBarras { get; set; }
 

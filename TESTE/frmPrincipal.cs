@@ -30,5 +30,10 @@ namespace TESTE
             tela.MdiParent = this;
             tela.Show();
         }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

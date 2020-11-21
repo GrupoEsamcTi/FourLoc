@@ -84,6 +84,7 @@ namespace TESTE
             }
         }
 
+
         private void bttCad_Click(object sender, EventArgs e)
         {
             Pessoa objPessoa = new Pessoa();
@@ -179,5 +180,6 @@ namespace TESTE
 
             LimparCadastro();
         }
+
     }
 }

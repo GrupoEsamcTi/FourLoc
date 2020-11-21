@@ -35,6 +35,7 @@
             this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +56,12 @@
             this.funcionarioToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.filmeToolStripMenuItem,
-            this.locaçãoToolStripMenuItem});
+            this.locaçãoToolStripMenuItem,
+            this.dEToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.cadastroToolStripMenuItem.Text = "Registro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
@@ -92,6 +95,12 @@
             this.locaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.locaçãoToolStripMenuItem.Text = "Locação";
             // 
+            // dEToolStripMenuItem
+            // 
+            this.dEToolStripMenuItem.Name = "dEToolStripMenuItem";
+            this.dEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dEToolStripMenuItem.Text = "Devolução";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +127,7 @@
         private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem locaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dEToolStripMenuItem;
     }
 }
 
