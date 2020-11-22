@@ -14,6 +14,10 @@ namespace Models
 
         public DateTime DtNascimento { get; set; }
 
+        public string DsPais { get; set; }
+
+        public string DsTipo { get; set; }
+
         public char DsSexo { get; set; }
 
         public char DsEstadoCivil { get; set; }

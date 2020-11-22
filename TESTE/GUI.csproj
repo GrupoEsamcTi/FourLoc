@@ -96,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmArtista.resx">
+      <DependentUpon>frmArtista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFilme.resx">
       <DependentUpon>frmFilme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenero.resx">
+      <DependentUpon>frmGenero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

@@ -16,5 +16,10 @@ namespace TESTE
         {
             InitializeComponent();
         }
+
+        private void frmGenero_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -469,5 +469,202 @@ namespace DAL
             return listaPessoas;
         }
 
+
+
+        ///////////////////////////////////////////////// ARTISTA E DIRETOR ///////////////////////////////////////////////////////////
+
+
+
+        public void InserirArtista(Pessoa objPessoa)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "INSERT INTO TBL_ARTISTA VALUES (@Nome,@nasc,@pais,@tipo)";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Nome", objPessoa.NmPessoa);
+            cmd.Parameters.AddWithValue("@nasc", objPessoa.DtNascimento);
+            cmd.Parameters.AddWithValue("@pais", objPessoa.DsPais);
+            cmd.Parameters.AddWithValue("@tipo", objPessoa.DsTipo);
+
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+
+        }
+
+        public Pessoa ObterArtista(string NmPessoa)
+
+        {
+            Pessoa pessoa = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM TBL_ARTISTA WHERE NOME_A = @nome";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@nome", NmPessoa);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows && dr.Read())
+            {
+
+                pessoa = new Pessoa();
+                pessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_A"]);
+                pessoa.NmPessoa = NmPessoa;
+                pessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC_C"]);
+                pessoa.DsPais = dr["PAIS_NASC"].ToString();
+                pessoa.DsTipo = dr["TIPO_A"].ToString();
+
+
+            }
+
+            conn.Close();
+
+            return pessoa;
+
+        }
+
+
+        public List<Pessoa> ListarArtista()
+        {
+            List<Pessoa> listaPessoas = new List<Pessoa>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM TBL_ARTISTA";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Pessoa objPessoa;
+                while (dr.Read())
+                {
+
+
+
+                    objPessoa = new Pessoa();
+                    objPessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_C"]);
+                    objPessoa.NmPessoa = dr["NOME_C"].ToString();
+                    objPessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC_C"]);
+                    objPessoa.DsPais = dr["PAIS_NASC"].ToString();
+                    objPessoa.DsTipo = dr["TIPO_A"].ToString();
+
+
+                    listaPessoas.Add(objPessoa);
+                }
+
+            }
+
+            conn.Close();
+
+            return listaPessoas;
+        }
+
+        public void AtualizarArtista(Pessoa objPessoa)
+
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+
+            conn.Open();
+
+            string sql = "UPDATE TBL_CLIENTES SET NOME_A = @Nome, DT_NASC = @nasc, PAIS_NASC = @pais, TIPO_A = @tipo WHERE CODIGO_A = @cod";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@cod", objPessoa.CdPessoa);
+            cmd.Parameters.AddWithValue("@Nome", objPessoa.NmPessoa);
+            cmd.Parameters.AddWithValue("@nasc", objPessoa.DtNascimento);
+            cmd.Parameters.AddWithValue("@pais", objPessoa.DsPais);
+            cmd.Parameters.AddWithValue("@tipo", objPessoa.DsTipo);
+
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+        }
+
+
+        public void ExcluirArtista(int cdPessoa)
+
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "DELETE FROM TBL_ARTISTA WHERE CODIGO_A = @cod";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@cod", cdPessoa);
+
+            cmd.ExecuteNonQuery();
+
+
+            conn.Close();
+
+
+
+        }
+
+
+        public List<Pessoa> ListarArtistaFiltros(string pais, string nome)
+        {
+            List<Pessoa> listaPessoas = new List<Pessoa>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM TBL_ARTISTA WHERE PAIS_NASC LIKE @pais and NOME_A LIKE @nome";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@pais", $"%{pais}%");
+            cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Pessoa objPessoa;
+                while (dr.Read())
+                {
+
+
+                    objPessoa = new Pessoa();
+                    objPessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_A"]);
+                    objPessoa.NmPessoa = dr["NOME_A"].ToString();
+                    objPessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC"]);
+                    objPessoa.DsPais = dr["PAIS_NASC"].ToString();
+                    objPessoa.DsTipo = dr["TIPO_A"].ToString();
+
+
+                    listaPessoas.Add(objPessoa);
+                }
+
+            }
+
+            conn.Close();
+
+            return listaPessoas;
+        }
+
+
+
+
+
+
     }
 }

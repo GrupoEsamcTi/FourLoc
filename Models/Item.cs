@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Item
+   public class Item
     {
         public int CdFilme { get; set; }
 
@@ -21,11 +21,11 @@ namespace Models
 
         public string DsTipo { get; set; }
 
-        public float NrPreco { get; set; }
+        public decimal NrPreco { get; set; }
 
         public DateTime DtAdquirida { get; set; }
 
-        public float NrValorCusto { get; set; }
+        public decimal NrValorCusto { get; set; }
 
         public string DsSituacao { get; set; }
 
