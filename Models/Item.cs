@@ -13,6 +13,23 @@ namespace Models
         public int CdGenero { get; set; }
         public int CdBarras { get; set; }
 
+        public int CdLocacao { get; set; }
+
+        public int CdDevolucao { get; set; }
+
+        public DateTime DtLocacao { get; set; }
+
+        public DateTime DtDevolucao { get; set; }
+
+        public  decimal Vl_Locacao { get; set; }
+
+        public decimal Vl_Recebido { get; set; }
+
+        public decimal NrMulta { get; set; }
+
+        public char Recebido { get; set; }
+
+
         public string DsTitulo { get; set; }
 
         public string DsGenero { get; set; }
@@ -33,7 +50,11 @@ namespace Models
 
         public string DsDiretor { get; set; }
 
+        public string NmFotoCapa { get; set; }
+
         public string DsFotoCapa { get; set; }
+
+        public int CdFoto { get; set; }
 
     }
 }

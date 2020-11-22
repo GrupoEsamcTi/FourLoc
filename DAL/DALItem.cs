@@ -37,6 +37,28 @@ namespace DAL
 
             conn.Close();
 
+       
+
+
+        }
+
+
+
+        public void InserirImagem(Item objItem)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "INSERT INTO TBL_ITEM VALUES (@nmfoto,FOTO_CAPA) SELECT '@nmfoto',* FROM OPENROWSET(BULK N'C:\\Users\\MISL\\FourLoc\\Imagens\\@nmfoto', SINGLE_BLOB) Load;";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@nmfoto", objItem.NmFotoCapa);
+           
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
 
         }
 
@@ -49,7 +71,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_ITEM WHERE CODIGO_I = @cod";
+            string sql = "SELECT * FROM TBL_ITEM  AS I JOIN TBL_IMAGEM AS M ON I.CODIGO_F = M.CODIGO_F  WHERE CODIGO_I = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@cod", cdItem);
@@ -68,7 +90,7 @@ namespace DAL
                 item.DsSituacao = dr["SITUACAO"].ToString();
                 item.DsAtores = dr["ATORES_P"].ToString();
                 item.DsDiretor = dr["DIRETOR"].ToString();
-
+                item.CdFoto = Convert.ToInt32(dr["CODIGO_F"]);
 
             }
 

@@ -32,10 +32,10 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,17 +77,12 @@
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
-            // listagemToolStripMenuItem
-            // 
-            this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
-            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.listagemToolStripMenuItem.Text = "Listagem";
-            // 
             // filmeToolStripMenuItem
             // 
             this.filmeToolStripMenuItem.Name = "filmeToolStripMenuItem";
             this.filmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.filmeToolStripMenuItem.Text = "Filme";
+            this.filmeToolStripMenuItem.Click += new System.EventHandler(this.filmeToolStripMenuItem_Click);
             // 
             // locaçãoToolStripMenuItem
             // 
@@ -100,6 +95,12 @@
             this.dEToolStripMenuItem.Name = "dEToolStripMenuItem";
             this.dEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dEToolStripMenuItem.Text = "Devolução";
+            // 
+            // listagemToolStripMenuItem
+            // 
+            this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
+            this.listagemToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.listagemToolStripMenuItem.Text = "Listagem";
             // 
             // Form1
             // 

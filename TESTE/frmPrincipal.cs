@@ -35,5 +35,13 @@ namespace TESTE
         {
 
         }
+
+        private void filmeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFilme tela = new frmFilme();
+            tela.MdiParent = this;
+            tela.Show();
+
+        }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
+using DAL;
 
 namespace TESTE
 {
@@ -17,44 +19,44 @@ namespace TESTE
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmFilme_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void bttInserir_Click(object sender, EventArgs e)
         {
+            Item objItem = new Item();
 
+            objItem.CdBarras = Convert.ToInt32(txtCdBarras.Text);
+            objItem.DsTitulo = txtTitulo.Text;
+            objItem.NrPreco = Convert.ToDecimal(mtbPreco.Text);
+            objItem.DtAdquirida = dtpDtAdquirida.Value;
+            objItem.NrValorCusto = Convert.ToDecimal(mtbVlCusto.Text);
+            objItem.DsSituacao = cbSituacao.Text;
+            objItem.DsAtores = txtAtores.Text;
+            objItem.DsDiretor = txtDiretor.Text;
+            objItem.CdFoto = Convert.ToInt32(txtCdFoto.Text);
+
+
+            DALItem iDAL = new DALItem();
+
+            iDAL.InserirItem(objItem);
+
+
+            MessageBox.Show("Filme cadastrada com sucesso");
         }
 
-        private void label15_Click(object sender, EventArgs e)
+        private void bttIns_Click(object sender, EventArgs e)
         {
+            Item objItem = new Item();
 
-        }
+            objItem.NmFotoCapa = txtNmCapa.Text;
 
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+            DALItem iDAL = new DALItem();
 
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
+            iDAL.InserirImagem(objItem);
         }
     }
+
 }
