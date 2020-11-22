@@ -51,8 +51,8 @@
                     <DynamicSelectedStyle BackColor="#507CD1" />
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página Inicial" Value="Página Inicial">
-                            <asp:MenuItem Text="Cadastros" Value="Cadastros">
-                                <asp:MenuItem NavigateUrl="~/Cad_filme.aspx" Text="Registrar item" Value="Registrar item"></asp:MenuItem>
+                            <asp:MenuItem Text="Pesquisas " Value="Pesquisas ">
+                                <asp:MenuItem NavigateUrl="~/Cad_filme.aspx" Text="Filmes e series" Value="Filmes e series"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/cad_artista.aspx" Text="Cadastro de Artista:" Value="Cadastro de Artista:"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Cad_Genero.aspx" Text="Cadastro Gênero:" Value="Cadastro Gênero:"></asp:MenuItem>
                             </asp:MenuItem>
