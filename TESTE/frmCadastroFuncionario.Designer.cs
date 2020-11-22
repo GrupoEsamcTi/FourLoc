@@ -64,11 +64,11 @@
             this.bttExcluir = new System.Windows.Forms.Button();
             this.bttCad = new System.Windows.Forms.Button();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NrCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -396,6 +396,34 @@
             this.dgvFuncionario.Size = new System.Drawing.Size(449, 107);
             this.dgvFuncionario.TabIndex = 22;
             // 
+            // CdPessoa
+            // 
+            this.CdPessoa.DataPropertyName = "CdPessoa";
+            this.CdPessoa.HeaderText = "Código";
+            this.CdPessoa.Name = "CdPessoa";
+            this.CdPessoa.ReadOnly = true;
+            // 
+            // NmPessoa
+            // 
+            this.NmPessoa.DataPropertyName = "NmPessoa";
+            this.NmPessoa.HeaderText = "Nome";
+            this.NmPessoa.Name = "NmPessoa";
+            this.NmPessoa.ReadOnly = true;
+            // 
+            // NrCPF
+            // 
+            this.NrCPF.DataPropertyName = "NrCPF";
+            this.NrCPF.HeaderText = "CPF";
+            this.NrCPF.Name = "NrCPF";
+            this.NrCPF.ReadOnly = true;
+            // 
+            // DsStatus
+            // 
+            this.DsStatus.DataPropertyName = "DsStatus";
+            this.DsStatus.HeaderText = "Status";
+            this.DsStatus.Name = "DsStatus";
+            this.DsStatus.ReadOnly = true;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -403,30 +431,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(508, 400);
             this.dataGridView2.TabIndex = 23;
-            // 
-            // CdPessoa
-            // 
-            this.CdPessoa.DataPropertyName = "CdPessoa";
-            this.CdPessoa.HeaderText = "Código";
-            this.CdPessoa.Name = "CdPessoa";
-            // 
-            // NmPessoa
-            // 
-            this.NmPessoa.DataPropertyName = "NmPessoa";
-            this.NmPessoa.HeaderText = "Nome";
-            this.NmPessoa.Name = "NmPessoa";
-            // 
-            // NrCPF
-            // 
-            this.NrCPF.DataPropertyName = "NrCPF";
-            this.NrCPF.HeaderText = "CPF";
-            this.NrCPF.Name = "NrCPF";
-            // 
-            // DsStatus
-            // 
-            this.DsStatus.DataPropertyName = "DsStatus";
-            this.DsStatus.HeaderText = "Status";
-            this.DsStatus.Name = "DsStatus";
             // 
             // frmCadastroFuncionario
             // 
