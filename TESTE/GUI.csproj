@@ -105,11 +105,17 @@
     <EmbeddedResource Include="frmCadastroFuncionario.resx">
       <DependentUpon>frmCadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucao.resx">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFilme.resx">
       <DependentUpon>frmFilme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenero.resx">
       <DependentUpon>frmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

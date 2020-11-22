@@ -41,7 +41,7 @@ namespace TESTE
             mtbCEP.Text = string.Empty;
             mtbTel.Text = string.Empty;
             mtbCel.Text = string.Empty;
-            txtStatus.Text = string.Empty;
+            cbStatus.Text = string.Empty;
             rbMasculino.Checked = true;
             rbFeminino.Checked = false;
 
@@ -91,7 +91,7 @@ namespace TESTE
             objPessoa.DsEmail = txtEmail.Text;
             objPessoa.NrTelefone = mtbTel.Text;
             objPessoa.NrCelular = mtbCel.Text;
-            objPessoa.DsStatus = txtStatus.Text;
+            objPessoa.DsStatus = cbStatus.Text;
             
 
 
@@ -100,9 +100,11 @@ namespace TESTE
             pDAL.InserirFuncionario(objPessoa);
 
 
-            MessageBox.Show("Pessoa cadastrada com sucesso");
+            MessageBox.Show("Funcionario cadastrada com sucesso");
 
             LimparCadastro();
+            CarregarFuncionario();
+
         }
 
         private void bttExcluir_Click_1(object sender, EventArgs e)
@@ -112,6 +114,10 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
             pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
+            CarregarFuncionario();
+            MessageBox.Show("Funcionario excluida com sucesso");
+
+
         }
 
         private void bttAtualizar_Click_1(object sender, EventArgs e)
@@ -145,7 +151,7 @@ namespace TESTE
             objPessoa.DsEmail = txtEmail.Text;
             objPessoa.NrTelefone = mtbTel.Text;
             objPessoa.NrCelular = mtbCel.Text;
-            objPessoa.DsStatus = txtStatus.Text;
+            objPessoa.DsStatus = cbStatus.Text;
 
 
             DALPessoa pDAL = new DALPessoa();
@@ -153,9 +159,11 @@ namespace TESTE
             pDAL.AtualizarFuncionario(objPessoa);
 
 
-            MessageBox.Show("Pessoa atualizado com sucesso");
+            MessageBox.Show("Funcionario atualizado com sucesso");
 
             LimparCadastro();
+            CarregarFuncionario();
+
         }
 
         private void bttPesq_Click_1(object sender, EventArgs e)
@@ -167,7 +175,7 @@ namespace TESTE
 
             if (pessoa == null)
             {
-                MessageBox.Show("Pessoa não encontrada.");
+                MessageBox.Show("Funcionario não encontrada.");
             }
 
             else
@@ -197,12 +205,12 @@ namespace TESTE
                 txtEmail.Text = pessoa.DsEmail;
                 mtbTel.Text = pessoa.NrTelefone;
                 mtbCel.Text = pessoa.NrCelular;
-                txtStatus.Text = pessoa.DsStatus;
+                cbStatus.Text = pessoa.DsStatus;
 
                 CarregarFuncionario();
             }
         }
 
-
+ 
     }
 }

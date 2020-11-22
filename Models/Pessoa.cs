@@ -41,9 +41,12 @@ namespace Models
         public string DsEmail { get; set; }
 
         public string DsStatus { get; set; }
+
+               
+
     }
 
-     
+
 
 
 }

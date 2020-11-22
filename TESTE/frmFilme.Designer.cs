@@ -34,18 +34,17 @@
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.mtbCPF = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.mtbPreco = new System.Windows.Forms.MaskedTextBox();
+            this.dtpDtAdquirida = new System.Windows.Forms.DateTimePicker();
+            this.mtbVlCusto = new System.Windows.Forms.MaskedTextBox();
+            this.cbSituacao = new System.Windows.Forms.ComboBox();
+            this.mtpTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mtpCelular = new System.Windows.Forms.MaskedTextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.dtpDtRetirada = new System.Windows.Forms.DateTimePicker();
+            this.dtpDtDevolucao = new System.Windows.Forms.DateTimePicker();
+            this.txtAtores = new System.Windows.Forms.TextBox();
+            this.txtDiretor = new System.Windows.Forms.TextBox();
             this.bttInserir = new System.Windows.Forms.Button();
             this.bttAtualizar = new System.Windows.Forms.Button();
             this.bttExcluir = new System.Windows.Forms.Button();
@@ -59,7 +58,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,7 +66,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbAno = new System.Windows.Forms.MaskedTextBox();
+            this.txtNmCapa = new System.Windows.Forms.TextBox();
+            this.bttIns = new System.Windows.Forms.Button();
+            this.txtCdFoto = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -112,127 +114,118 @@
             // 
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
-            "Solteiro",
-            "Casada",
-            "Divorciado"});
+            "DVD",
+            "DVD - Blurey",
+            "DVD -HD"});
             this.cbEstado.Location = new System.Drawing.Point(391, 78);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(83, 21);
             this.cbEstado.TabIndex = 62;
             // 
-            // mtbCPF
+            // mtbPreco
             // 
-            this.mtbCPF.Location = new System.Drawing.Point(520, 78);
-            this.mtbCPF.Mask = "$ 0000,00";
-            this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(86, 20);
-            this.mtbCPF.TabIndex = 63;
+            this.mtbPreco.Location = new System.Drawing.Point(520, 78);
+            this.mtbPreco.Mask = "$ 0000,00";
+            this.mtbPreco.Name = "mtbPreco";
+            this.mtbPreco.Size = new System.Drawing.Size(86, 20);
+            this.mtbPreco.TabIndex = 63;
             // 
-            // dateTimePicker1
+            // dtpDtAdquirida
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(121, 124);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 64;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
+            this.dtpDtAdquirida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtAdquirida.Location = new System.Drawing.Point(121, 124);
+            this.dtpDtAdquirida.Name = "dtpDtAdquirida";
+            this.dtpDtAdquirida.Size = new System.Drawing.Size(97, 20);
+            this.dtpDtAdquirida.TabIndex = 64;
+            this.dtpDtAdquirida.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
             // 
-            // maskedTextBox1
+            // mtbVlCusto
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(321, 127);
-            this.maskedTextBox1.Mask = "$ 0000,00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 65;
+            this.mtbVlCusto.Location = new System.Drawing.Point(321, 127);
+            this.mtbVlCusto.Mask = "$ 0000,00";
+            this.mtbVlCusto.Name = "mtbVlCusto";
+            this.mtbVlCusto.Size = new System.Drawing.Size(100, 20);
+            this.mtbVlCusto.TabIndex = 65;
             // 
-            // comboBox1
+            // cbSituacao
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbSituacao.FormattingEnabled = true;
+            this.cbSituacao.Items.AddRange(new object[] {
             "Disponivel",
             "Locado"});
-            this.comboBox1.Location = new System.Drawing.Point(523, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(83, 21);
-            this.comboBox1.TabIndex = 66;
+            this.cbSituacao.Location = new System.Drawing.Point(523, 126);
+            this.cbSituacao.Name = "cbSituacao";
+            this.cbSituacao.Size = new System.Drawing.Size(83, 21);
+            this.cbSituacao.TabIndex = 66;
             // 
-            // maskedTextBox2
+            // mtpTelefone
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(321, 219);
-            this.maskedTextBox2.Mask = "000.000.000-00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 67;
-            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.mtpTelefone.Location = new System.Drawing.Point(91, 216);
+            this.mtpTelefone.Mask = "(00) 0000-0000";
+            this.mtpTelefone.Name = "mtpTelefone";
+            this.mtpTelefone.Size = new System.Drawing.Size(80, 20);
+            this.mtpTelefone.TabIndex = 67;
             // 
-            // maskedTextBox3
+            // mtpCelular
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(506, 219);
-            this.maskedTextBox3.Mask = "000.000.000-00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 68;
-            this.maskedTextBox3.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
+            this.mtpCelular.Location = new System.Drawing.Point(218, 216);
+            this.mtpCelular.Mask = "(00) 00000-0000";
+            this.mtpCelular.Name = "mtpCelular";
+            this.mtpCelular.Size = new System.Drawing.Size(88, 20);
+            this.mtpCelular.TabIndex = 68;
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 69;
+            this.txtNome.Location = new System.Drawing.Point(114, 171);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(166, 20);
+            this.txtNome.TabIndex = 70;
             // 
-            // textBox2
+            // dtpDtRetirada
             // 
-            this.textBox2.Location = new System.Drawing.Point(430, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 70;
+            this.dtpDtRetirada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtRetirada.Location = new System.Drawing.Point(338, 171);
+            this.dtpDtRetirada.Name = "dtpDtRetirada";
+            this.dtpDtRetirada.Size = new System.Drawing.Size(97, 20);
+            this.dtpDtRetirada.TabIndex = 71;
+            this.dtpDtRetirada.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
             // 
-            // dateTimePicker2
+            // dtpDtDevolucao
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(143, 219);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker2.TabIndex = 71;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dtpDtDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtDevolucao.Location = new System.Drawing.Point(509, 171);
+            this.dtpDtDevolucao.Name = "dtpDtDevolucao";
+            this.dtpDtDevolucao.Size = new System.Drawing.Size(97, 20);
+            this.dtpDtDevolucao.TabIndex = 72;
+            this.dtpDtDevolucao.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
             // 
-            // dateTimePicker3
+            // txtAtores
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(143, 265);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker3.TabIndex = 72;
-            this.dateTimePicker3.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
+            this.txtAtores.Location = new System.Drawing.Point(349, 216);
+            this.txtAtores.Name = "txtAtores";
+            this.txtAtores.Size = new System.Drawing.Size(111, 20);
+            this.txtAtores.TabIndex = 73;
             // 
-            // textBox3
+            // txtDiretor
             // 
-            this.textBox3.Location = new System.Drawing.Point(480, 264);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 73;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(306, 264);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 20);
-            this.textBox4.TabIndex = 74;
+            this.txtDiretor.Location = new System.Drawing.Point(509, 216);
+            this.txtDiretor.Name = "txtDiretor";
+            this.txtDiretor.Size = new System.Drawing.Size(97, 20);
+            this.txtDiretor.TabIndex = 74;
             // 
             // bttInserir
             // 
-            this.bttInserir.Location = new System.Drawing.Point(121, 322);
+            this.bttInserir.Location = new System.Drawing.Point(114, 265);
             this.bttInserir.Name = "bttInserir";
             this.bttInserir.Size = new System.Drawing.Size(75, 23);
             this.bttInserir.TabIndex = 75;
             this.bttInserir.Text = "Cadastra";
             this.bttInserir.UseVisualStyleBackColor = true;
+            this.bttInserir.Click += new System.EventHandler(this.bttInserir_Click);
             // 
             // bttAtualizar
             // 
-            this.bttAtualizar.Location = new System.Drawing.Point(286, 322);
+            this.bttAtualizar.Location = new System.Drawing.Point(279, 265);
             this.bttAtualizar.Name = "bttAtualizar";
             this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
             this.bttAtualizar.TabIndex = 76;
@@ -241,7 +234,7 @@
             // 
             // bttExcluir
             // 
-            this.bttExcluir.Location = new System.Drawing.Point(455, 322);
+            this.bttExcluir.Location = new System.Drawing.Point(448, 265);
             this.bttExcluir.Name = "bttExcluir";
             this.bttExcluir.Size = new System.Drawing.Size(75, 23);
             this.bttExcluir.TabIndex = 77;
@@ -301,7 +294,6 @@
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 83;
             this.label6.Text = "Tipo";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -339,19 +331,10 @@
             this.label10.TabIndex = 87;
             this.label10.Text = "Situação";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 177);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
-            this.label11.TabIndex = 88;
-            this.label11.Text = "Nome Funcionario";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(340, 177);
+            this.label12.Location = new System.Drawing.Point(38, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 13);
             this.label12.TabIndex = 89;
@@ -360,46 +343,43 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(56, 219);
+            this.label13.Location = new System.Drawing.Point(283, 174);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.Size = new System.Drawing.Size(53, 13);
             this.label13.TabIndex = 90;
-            this.label13.Text = "Data Retirada";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.label13.Text = "Data Ret.";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(56, 267);
+            this.label14.Location = new System.Drawing.Point(445, 174);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 13);
+            this.label14.Size = new System.Drawing.Size(56, 13);
             this.label14.TabIndex = 91;
-            this.label14.Text = "Data Devolucao";
+            this.label14.Text = "Data Dev.";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(262, 222);
+            this.label15.Location = new System.Drawing.Point(38, 219);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 13);
             this.label15.TabIndex = 92;
             this.label15.Text = "Telefone";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(452, 223);
+            this.label16.Location = new System.Drawing.Point(175, 219);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(39, 13);
             this.label16.TabIndex = 93;
             this.label16.Text = "Celular";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(437, 267);
+            this.label17.Location = new System.Drawing.Point(310, 219);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(37, 13);
             this.label17.TabIndex = 94;
@@ -408,7 +388,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(262, 267);
+            this.label19.Location = new System.Drawing.Point(466, 219);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 96;
@@ -419,24 +399,61 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(623, 36);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(28, 13);
+            this.label20.Size = new System.Drawing.Size(59, 13);
             this.label20.TabIndex = 97;
-            this.label20.Text = "Foto";
+            this.label20.Text = "Nome Foto";
             // 
-            // maskedTextBox4
+            // mtbAno
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(273, 79);
-            this.maskedTextBox4.Mask = "0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(42, 20);
-            this.maskedTextBox4.TabIndex = 98;
+            this.mtbAno.Location = new System.Drawing.Point(273, 79);
+            this.mtbAno.Mask = "0000";
+            this.mtbAno.Name = "mtbAno";
+            this.mtbAno.Size = new System.Drawing.Size(42, 20);
+            this.mtbAno.TabIndex = 98;
+            // 
+            // txtNmCapa
+            // 
+            this.txtNmCapa.Location = new System.Drawing.Point(688, 33);
+            this.txtNmCapa.Name = "txtNmCapa";
+            this.txtNmCapa.Size = new System.Drawing.Size(93, 20);
+            this.txtNmCapa.TabIndex = 99;
+            // 
+            // bttIns
+            // 
+            this.bttIns.Location = new System.Drawing.Point(697, 59);
+            this.bttIns.Name = "bttIns";
+            this.bttIns.Size = new System.Drawing.Size(75, 23);
+            this.bttIns.TabIndex = 100;
+            this.bttIns.Text = "Inserir";
+            this.bttIns.UseVisualStyleBackColor = true;
+            this.bttIns.Click += new System.EventHandler(this.bttIns_Click);
+            // 
+            // txtCdFoto
+            // 
+            this.txtCdFoto.Location = new System.Drawing.Point(856, 33);
+            this.txtCdFoto.Name = "txtCdFoto";
+            this.txtCdFoto.Size = new System.Drawing.Size(43, 20);
+            this.txtCdFoto.TabIndex = 101;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(797, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 102;
+            this.label11.Text = "Cód. Foto";
             // 
             // frmFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 358);
-            this.Controls.Add(this.maskedTextBox4);
+            this.ClientSize = new System.Drawing.Size(921, 307);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtCdFoto);
+            this.Controls.Add(this.bttIns);
+            this.Controls.Add(this.txtNmCapa);
+            this.Controls.Add(this.mtbAno);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
@@ -445,7 +462,6 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -459,18 +475,17 @@
             this.Controls.Add(this.bttExcluir);
             this.Controls.Add(this.bttAtualizar);
             this.Controls.Add(this.bttInserir);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.mtbCPF);
+            this.Controls.Add(this.txtDiretor);
+            this.Controls.Add(this.txtAtores);
+            this.Controls.Add(this.dtpDtDevolucao);
+            this.Controls.Add(this.dtpDtRetirada);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.mtpCelular);
+            this.Controls.Add(this.mtpTelefone);
+            this.Controls.Add(this.cbSituacao);
+            this.Controls.Add(this.mtbVlCusto);
+            this.Controls.Add(this.dtpDtAdquirida);
+            this.Controls.Add(this.mtbPreco);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtTitulo);
@@ -493,18 +508,17 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.ComboBox cbEstado;
-        private System.Windows.Forms.MaskedTextBox mtbCPF;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.MaskedTextBox mtbPreco;
+        private System.Windows.Forms.DateTimePicker dtpDtAdquirida;
+        private System.Windows.Forms.MaskedTextBox mtbVlCusto;
+        private System.Windows.Forms.ComboBox cbSituacao;
+        private System.Windows.Forms.MaskedTextBox mtpTelefone;
+        private System.Windows.Forms.MaskedTextBox mtpCelular;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.DateTimePicker dtpDtRetirada;
+        private System.Windows.Forms.DateTimePicker dtpDtDevolucao;
+        private System.Windows.Forms.TextBox txtAtores;
+        private System.Windows.Forms.TextBox txtDiretor;
         private System.Windows.Forms.Button bttInserir;
         private System.Windows.Forms.Button bttAtualizar;
         private System.Windows.Forms.Button bttExcluir;
@@ -518,7 +532,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -527,6 +540,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox mtbAno;
+        private System.Windows.Forms.TextBox txtNmCapa;
+        private System.Windows.Forms.Button bttIns;
+        private System.Windows.Forms.TextBox txtCdFoto;
+        private System.Windows.Forms.Label label11;
     }
 }

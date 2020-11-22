@@ -33,7 +33,7 @@ namespace TESTE
             mtbCEP.Text = string.Empty;
             mtbTel.Text = string.Empty;
             mtbCel.Text = string.Empty;
-            txtStatus.Text = string.Empty;
+            cbStatus.Text = string.Empty;
             rbMasculino.Checked = true;
             rbFeminino.Checked = false;
 
@@ -48,7 +48,7 @@ namespace TESTE
 
             if (pessoa == null)
             {
-                MessageBox.Show("Pessoa não encontrada.");
+                MessageBox.Show("Cliente não encontrada.");
             }
 
             else
@@ -78,7 +78,7 @@ namespace TESTE
                 txtEmail.Text = pessoa.DsEmail;
                 mtbTel.Text = pessoa.NrTelefone;
                 mtbCel.Text = pessoa.NrCelular;
-                txtStatus.Text = pessoa.DsStatus;
+                cbStatus.Text = pessoa.DsStatus;
 
 
             }
@@ -114,7 +114,7 @@ namespace TESTE
             objPessoa.DsEmail = txtEmail.Text;
             objPessoa.NrTelefone = mtbTel.Text;
             objPessoa.NrCelular = mtbCel.Text;
-            objPessoa.DsStatus = txtStatus.Text;
+            objPessoa.DsStatus = cbStatus.Text;
 
 
 
@@ -123,9 +123,11 @@ namespace TESTE
             pDAL.InserirFuncionario(objPessoa);
 
 
-            MessageBox.Show("Pessoa cadastrada com sucesso");
+            MessageBox.Show("Cliente cadastrada com sucesso");
 
             LimparCadastro();
+
+            CarregarCliente();
         }
 
         private void bttExcluir_Click(object sender, EventArgs e)
@@ -135,6 +137,9 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
             pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
+            MessageBox.Show("Cliente excluido com sucesso");
+
+            CarregarCliente();
         }
 
         private void bttAtualizar_Click(object sender, EventArgs e)
@@ -168,7 +173,7 @@ namespace TESTE
             objPessoa.DsEmail = txtEmail.Text;
             objPessoa.NrTelefone = mtbTel.Text;
             objPessoa.NrCelular = mtbCel.Text;
-            objPessoa.DsStatus = txtStatus.Text;
+            objPessoa.DsStatus = cbStatus.Text;
 
 
             DALPessoa pDAL = new DALPessoa();
@@ -176,9 +181,17 @@ namespace TESTE
             pDAL.AtualizarFuncionario(objPessoa);
 
 
-            MessageBox.Show("Pessoa atualizado com sucesso");
+            MessageBox.Show("Cliente atualizado com sucesso");
 
             LimparCadastro();
+            CarregarCliente();
+        }
+
+
+        private void CarregarCliente()
+        {
+            DALPessoa pDAL = new DALPessoa();
+            dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
     }
