@@ -352,7 +352,7 @@
             // 
             // bttAtualizar
             // 
-            this.bttAtualizar.Location = new System.Drawing.Point(349, 285);
+            this.bttAtualizar.Location = new System.Drawing.Point(356, 285);
             this.bttAtualizar.Name = "bttAtualizar";
             this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
             this.bttAtualizar.TabIndex = 20;
