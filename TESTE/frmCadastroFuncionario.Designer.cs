@@ -420,24 +420,36 @@
             this.CdPessoa.DataPropertyName = "CdPessoa";
             this.CdPessoa.HeaderText = "Código";
             this.CdPessoa.Name = "CdPessoa";
+            this.CdPessoa.ReadOnly = true;
             // 
             // NmPessoa
             // 
             this.NmPessoa.DataPropertyName = "NmPessoa";
             this.NmPessoa.HeaderText = "Nome";
             this.NmPessoa.Name = "NmPessoa";
+            this.NmPessoa.ReadOnly = true;
             // 
             // NrCPF
             // 
             this.NrCPF.DataPropertyName = "NrCPF";
             this.NrCPF.HeaderText = "CPF";
             this.NrCPF.Name = "NrCPF";
+            this.NrCPF.ReadOnly = true;
             // 
             // DsStatus
             // 
             this.DsStatus.DataPropertyName = "DsStatus";
             this.DsStatus.HeaderText = "Status";
             this.DsStatus.Name = "DsStatus";
+            this.DsStatus.ReadOnly = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(554, 33);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(508, 400);
+            this.dataGridView2.TabIndex = 23;
             // 
             // DsCEP
             // 

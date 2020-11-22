@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "TESTE\GUI.csproj", "{9BEA62F6-8534-4DCE-9CA3-88F112E504E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBUI", "WEBUI\WEBUI.csproj", "{7279CCD9-DEC4-40FA-9A13-B646D596CBC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9BEA62F6-8534-4DCE-9CA3-88F112E504E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BEA62F6-8534-4DCE-9CA3-88F112E504E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BEA62F6-8534-4DCE-9CA3-88F112E504E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7279CCD9-DEC4-40FA-9A13-B646D596CBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7279CCD9-DEC4-40FA-9A13-B646D596CBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7279CCD9-DEC4-40FA-9A13-B646D596CBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7279CCD9-DEC4-40FA-9A13-B646D596CBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
