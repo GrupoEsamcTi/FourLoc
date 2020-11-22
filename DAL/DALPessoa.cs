@@ -99,7 +99,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT CODIGO_F,NOME_F,CPF_FSTATUS_F FROM TBL_FUNCIONARIOS";
+            string sql = "SELECT CODIGO_F,NOME_F,CPF_F,STATUS_F FROM TBL_FUNCIONARIOS";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 

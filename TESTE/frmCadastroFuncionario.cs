@@ -199,10 +199,10 @@ namespace TESTE
                 mtbCel.Text = pessoa.NrCelular;
                 txtStatus.Text = pessoa.DsStatus;
 
-
+                CarregarFuncionario();
             }
         }
 
- 
+
     }
 }

@@ -518,10 +518,10 @@
         private System.Windows.Forms.Button bttExcluir;
         private System.Windows.Forms.Button bttCad;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NmPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NrCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsStatus;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
     }
 }
