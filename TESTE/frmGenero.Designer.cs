@@ -30,7 +30,7 @@
         {
             this.bttPesq = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bttAtualizar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.bttPesq.TabIndex = 105;
             this.bttPesq.Text = "Pesq";
             this.bttPesq.UseVisualStyleBackColor = true;
+            this.bttPesq.Click += new System.EventHandler(this.bttPesq_Click);
             // 
             // label2
             // 
@@ -56,12 +57,12 @@
             this.label2.TabIndex = 104;
             this.label2.Text = "Gênero:";
             // 
-            // txtNome
+            // txtGenero
             // 
-            this.txtNome.Location = new System.Drawing.Point(250, 31);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(242, 20);
-            this.txtNome.TabIndex = 103;
+            this.txtGenero.Location = new System.Drawing.Point(250, 31);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(242, 20);
+            this.txtGenero.TabIndex = 103;
             // 
             // txtCodigo
             // 
@@ -87,6 +88,7 @@
             this.bttAtualizar.TabIndex = 108;
             this.bttAtualizar.Text = "Atualizar";
             this.bttAtualizar.UseVisualStyleBackColor = true;
+            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
             // 
             // bttExcluir
             // 
@@ -96,6 +98,7 @@
             this.bttExcluir.TabIndex = 107;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
             // 
             // bttCad
             // 
@@ -105,6 +108,7 @@
             this.bttCad.TabIndex = 106;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
+            this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
             // 
             // frmGenero
             // 
@@ -116,7 +120,7 @@
             this.Controls.Add(this.bttCad);
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmGenero";
@@ -131,7 +135,7 @@
 
         private System.Windows.Forms.Button bttPesq;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttAtualizar;
