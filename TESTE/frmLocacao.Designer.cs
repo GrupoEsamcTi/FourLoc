@@ -162,7 +162,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(123, 159);
-            this.maskedTextBox1.Mask = "$ 0000,00";
+            this.maskedTextBox1.Mask = " 0000,00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox1.TabIndex = 8;
@@ -247,7 +247,7 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(271, 159);
-            this.maskedTextBox3.Mask = "$ 0000,00";
+            this.maskedTextBox3.Mask = " 0000,00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox3.TabIndex = 9;
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 286);
+            this.ClientSize = new System.Drawing.Size(531, 286);
             this.Controls.Add(this.bttLocacao);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.maskedTextBox3);
