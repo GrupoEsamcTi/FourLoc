@@ -388,7 +388,8 @@
             // 
             // dgvFuncionario
             // 
-            this.dgvFuncionario.AllowUserToOrderColumns = true;
+            this.dgvFuncionario.AllowUserToAddRows = false;
+            this.dgvFuncionario.AllowUserToDeleteRows = false;
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdPessoa,
@@ -412,8 +413,10 @@
             this.Excluir});
             this.dgvFuncionario.Location = new System.Drawing.Point(12, 334);
             this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.Size = new System.Drawing.Size(645, 122);
             this.dgvFuncionario.TabIndex = 22;
+            this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
             // 
             // CdPessoa
             // 
@@ -442,14 +445,6 @@
             this.DsStatus.HeaderText = "Status";
             this.DsStatus.Name = "DsStatus";
             this.DsStatus.ReadOnly = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(554, 33);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(508, 400);
-            this.dataGridView2.TabIndex = 23;
             // 
             // DsCEP
             // 

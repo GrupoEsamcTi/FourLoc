@@ -18,26 +18,7 @@ namespace TESTE
         {
             InitializeComponent();
         }
-        private void LimparCadastro()
-        {
-            txtCodigo.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            mtbRG.Text = string.Empty;
-            mtbCPF.Text = string.Empty;
-            dtpDtNasc.Text = string.Empty;
-            cbEstado.Text = string.Empty;
-            txtEndereco.Text = string.Empty;
-            txtEstado.Text = string.Empty;
-            txtCidade.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            mtbCEP.Text = string.Empty;
-            mtbTel.Text = string.Empty;
-            mtbCel.Text = string.Empty;
-            cbStatus.Text = string.Empty;
-            rbMasculino.Checked = true;
-            rbFeminino.Checked = false;
-
-        }
+        
 
         private void bttPesq_Click(object sender, EventArgs e)
         {
@@ -120,7 +101,7 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
 
-            pDAL.InserirFuncionario(objPessoa);
+            pDAL.InserirCliente(objPessoa);
 
 
             MessageBox.Show("Cliente cadastrada com sucesso");
@@ -136,7 +117,7 @@ namespace TESTE
             objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
-            pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
+            pDAL.ExcluirCliente(objPessoa.CdPessoa);
             MessageBox.Show("Cliente excluido com sucesso");
 
             CarregarCliente();
@@ -178,12 +159,14 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
 
-            pDAL.AtualizarFuncionario(objPessoa);
+            pDAL.AtualizarCliente(objPessoa);
 
 
             MessageBox.Show("Cliente atualizado com sucesso");
 
             LimparCadastro();
+            pDAL.ListarCliente();
+            
             CarregarCliente();
         }
 
@@ -194,5 +177,30 @@ namespace TESTE
             dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
+        private void LimparCadastro()
+        {
+            txtCodigo.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            mtbRG.Text = string.Empty;
+            mtbCPF.Text = string.Empty;
+            dtpDtNasc.Text = string.Empty;
+            cbEstado.Text = string.Empty;
+            txtEndereco.Text = string.Empty;
+            txtEstado.Text = string.Empty;
+            txtCidade.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            mtbCEP.Text = string.Empty;
+            mtbTel.Text = string.Empty;
+            mtbCel.Text = string.Empty;
+            cbStatus.Text = string.Empty;
+            rbMasculino.Checked = true;
+            rbFeminino.Checked = false;
+
+        }
+
+        private void frmCadastroCliente_Load(object sender, EventArgs e)
+        {
+            CarregarCliente();
+        }
     }
 }

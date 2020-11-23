@@ -63,6 +63,7 @@
             this.bttAtualizar = new System.Windows.Forms.Button();
             this.bttPesq = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsCEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,6 @@
             this.DsCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -387,7 +387,6 @@
             // 
             // dgvCliente
             // 
-            this.dgvCliente.AllowUserToOrderColumns = true;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdPessoa,
@@ -414,23 +413,38 @@
             this.dgvCliente.Size = new System.Drawing.Size(645, 122);
             this.dgvCliente.TabIndex = 66;
             // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Ativado",
+            "Pendente",
+            "Desativado"});
+            this.cbStatus.Location = new System.Drawing.Point(475, 234);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(83, 21);
+            this.cbStatus.TabIndex = 67;
+            // 
             // CdPessoa
             // 
             this.CdPessoa.DataPropertyName = "CdPessoa";
             this.CdPessoa.HeaderText = "Código";
             this.CdPessoa.Name = "CdPessoa";
+            this.CdPessoa.ReadOnly = true;
             // 
             // NmPessoa
             // 
             this.NmPessoa.DataPropertyName = "NmPessoa";
             this.NmPessoa.HeaderText = "Nome";
             this.NmPessoa.Name = "NmPessoa";
+            this.NmPessoa.ReadOnly = true;
             // 
             // DsCEP
             // 
             this.DsCEP.DataPropertyName = "DsCEP";
             this.DsCEP.HeaderText = "CEP";
             this.DsCEP.Name = "DsCEP";
+            this.DsCEP.ReadOnly = true;
             this.DsCEP.Visible = false;
             // 
             // DsEstado
@@ -541,18 +555,6 @@
             this.Excluir.Name = "Excluir";
             this.Excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Ativado",
-            "Pendente",
-            "Desativado"});
-            this.cbStatus.Location = new System.Drawing.Point(475, 234);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(83, 21);
-            this.cbStatus.TabIndex = 67;
-            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +598,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
             this.Text = "Cadastro Cliente";
+            this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -639,6 +642,7 @@
         private System.Windows.Forms.Button bttAtualizar;
         private System.Windows.Forms.Button bttPesq;
         private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NmPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCEP;
@@ -658,6 +662,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCidade;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Excluir;
-        private System.Windows.Forms.ComboBox cbStatus;
     }
 }
