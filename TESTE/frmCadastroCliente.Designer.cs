@@ -364,6 +364,7 @@
             this.bttExcluir.TabIndex = 63;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click_1);
             // 
             // bttAtualizar
             // 
@@ -596,6 +597,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
             this.Text = "Cadastro Cliente";
+            this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

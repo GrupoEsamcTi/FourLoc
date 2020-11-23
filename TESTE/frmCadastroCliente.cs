@@ -44,7 +44,7 @@ namespace TESTE
             int cdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
-            Pessoa pessoa = pDAL.ObterFuncionario(cdPessoa);
+            Pessoa pessoa = pDAL.ObterCliente(cdPessoa);
 
             if (pessoa == null)
             {
@@ -120,7 +120,7 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
 
-            pDAL.InserirFuncionario(objPessoa);
+            pDAL.InserirCliente(objPessoa);
 
 
             MessageBox.Show("Cliente cadastrada com sucesso");
@@ -130,17 +130,6 @@ namespace TESTE
             CarregarCliente();
         }
 
-        private void bttExcluir_Click(object sender, EventArgs e)
-        {
-            Pessoa objPessoa = new Pessoa();
-            objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
-
-            DALPessoa pDAL = new DALPessoa();
-            pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
-            MessageBox.Show("Cliente excluido com sucesso");
-
-            CarregarCliente();
-        }
 
         private void bttAtualizar_Click(object sender, EventArgs e)
         {
@@ -178,7 +167,7 @@ namespace TESTE
 
             DALPessoa pDAL = new DALPessoa();
 
-            pDAL.AtualizarFuncionario(objPessoa);
+            pDAL.AtualizarCliente(objPessoa);
 
 
             MessageBox.Show("Cliente atualizado com sucesso");
@@ -194,5 +183,21 @@ namespace TESTE
             dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
+        private void bttExcluir_Click_1(object sender, EventArgs e)
+        {
+            Pessoa objPessoa = new Pessoa();
+            objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
+
+            DALPessoa pDAL = new DALPessoa();
+            pDAL.ExcluirCliente(objPessoa.CdPessoa);
+            MessageBox.Show("Cliente excluido com sucesso");
+
+            CarregarCliente();
+        }
+
+        private void frmCadastroCliente_Load(object sender, EventArgs e)
+        {
+            CarregarCliente();
+        }
     }
 }

@@ -157,6 +157,7 @@
             this.txtCodigoF.Name = "txtCodigoF";
             this.txtCodigoF.Size = new System.Drawing.Size(62, 20);
             this.txtCodigoF.TabIndex = 3;
+            this.txtCodigoF.TextChanged += new System.EventHandler(this.txtCodigoF_TextChanged);
             // 
             // maskedTextBox1
             // 
@@ -188,7 +189,7 @@
             this.bttPesq.TabIndex = 2;
             this.bttPesq.Text = "Pesq";
             this.bttPesq.UseVisualStyleBackColor = true;
-           // 
+            // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(102, 38);

@@ -43,5 +43,13 @@ namespace TESTE
             tela.Show();
 
         }
+
+        private void locaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocacao tela = new frmLocacao();
+            tela.MdiParent = this;
+            tela.Show();
+
+        }
     }
 }
