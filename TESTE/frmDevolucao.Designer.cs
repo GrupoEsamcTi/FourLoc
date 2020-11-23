@@ -62,7 +62,7 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(247, 76);
-            this.maskedTextBox3.Mask = "$ 00,00";
+            this.maskedTextBox3.Mask = " 00,00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox3.TabIndex = 121;
@@ -72,9 +72,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(334, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 130;
-            this.label5.Text = "Pago";
+            this.label5.Text = "Pagamento";
             // 
             // comboBox2
             // 
@@ -83,7 +83,7 @@
             "Pago",
             "Parcial",
             "Não "});
-            this.comboBox2.Location = new System.Drawing.Point(374, 76);
+            this.comboBox2.Location = new System.Drawing.Point(401, 76);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(63, 21);
             this.comboBox2.TabIndex = 122;
@@ -91,7 +91,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(249, 131);
+            this.label14.Location = new System.Drawing.Point(249, 125);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 129;
@@ -136,7 +136,7 @@
             // dtpDevolucao
             // 
             this.dtpDevolucao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDevolucao.Location = new System.Drawing.Point(340, 125);
+            this.dtpDevolucao.Location = new System.Drawing.Point(340, 121);
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.Size = new System.Drawing.Size(97, 20);
             this.dtpDevolucao.TabIndex = 124;
@@ -154,7 +154,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(99, 76);
-            this.maskedTextBox1.Mask = "$ 00,00";
+            this.maskedTextBox1.Mask = "00,00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox1.TabIndex = 120;
@@ -184,9 +184,9 @@
             // 
             // bttLocacao
             // 
-            this.bttLocacao.Location = new System.Drawing.Point(191, 193);
+            this.bttLocacao.Location = new System.Drawing.Point(205, 188);
             this.bttLocacao.Name = "bttLocacao";
-            this.bttLocacao.Size = new System.Drawing.Size(92, 23);
+            this.bttLocacao.Size = new System.Drawing.Size(92, 34);
             this.bttLocacao.TabIndex = 132;
             this.bttLocacao.Text = "Devolução";
             this.bttLocacao.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 170);
+            this.label3.Location = new System.Drawing.Point(32, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 134;
@@ -202,8 +202,8 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(67, 167);
-            this.maskedTextBox2.Mask = "$ 00,00";
+            this.maskedTextBox2.Location = new System.Drawing.Point(81, 166);
+            this.maskedTextBox2.Mask = " 00,00";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox2.TabIndex = 133;
