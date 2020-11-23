@@ -21,7 +21,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO TBL_ITEM VALUES (@cbd,@tit,@preco,@dt_ad,@vlc,@sit,@ator,@dir)";
+            string sql = "INSERT INTO TBL_ITEM VALUES (@cdb, @tit, @preco, @dt_ad, @vlc, @sit, @ator, @dir)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cdb", objItem.CdBarras);
             cmd.Parameters.AddWithValue("@tit", objItem.DsTitulo);

@@ -125,10 +125,11 @@
             // mtbPreco
             // 
             this.mtbPreco.Location = new System.Drawing.Point(520, 78);
-            this.mtbPreco.Mask = "$ 0000,00";
+            this.mtbPreco.Mask = "0000,00";
             this.mtbPreco.Name = "mtbPreco";
             this.mtbPreco.Size = new System.Drawing.Size(86, 20);
             this.mtbPreco.TabIndex = 63;
+            this.mtbPreco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbPreco_MaskInputRejected);
             // 
             // dtpDtAdquirida
             // 
@@ -142,10 +143,11 @@
             // mtbVlCusto
             // 
             this.mtbVlCusto.Location = new System.Drawing.Point(321, 127);
-            this.mtbVlCusto.Mask = "$ 0000,00";
+            this.mtbVlCusto.Mask = "0000,00";
             this.mtbVlCusto.Name = "mtbVlCusto";
             this.mtbVlCusto.Size = new System.Drawing.Size(100, 20);
             this.mtbVlCusto.TabIndex = 65;
+            this.mtbVlCusto.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbVlCusto_MaskInputRejected);
             // 
             // cbSituacao
             // 
@@ -402,6 +404,7 @@
             this.label20.Size = new System.Drawing.Size(59, 13);
             this.label20.TabIndex = 97;
             this.label20.Text = "Nome Foto";
+            this.label20.Visible = false;
             // 
             // mtbAno
             // 
@@ -417,6 +420,7 @@
             this.txtNmCapa.Name = "txtNmCapa";
             this.txtNmCapa.Size = new System.Drawing.Size(93, 20);
             this.txtNmCapa.TabIndex = 99;
+            this.txtNmCapa.Visible = false;
             // 
             // bttIns
             // 
@@ -426,6 +430,7 @@
             this.bttIns.TabIndex = 100;
             this.bttIns.Text = "Inserir";
             this.bttIns.UseVisualStyleBackColor = true;
+            this.bttIns.Visible = false;
             this.bttIns.Click += new System.EventHandler(this.bttIns_Click);
             // 
             // txtCdFoto
@@ -434,6 +439,7 @@
             this.txtCdFoto.Name = "txtCdFoto";
             this.txtCdFoto.Size = new System.Drawing.Size(43, 20);
             this.txtCdFoto.TabIndex = 101;
+            this.txtCdFoto.Visible = false;
             // 
             // label11
             // 
@@ -443,6 +449,7 @@
             this.label11.Size = new System.Drawing.Size(53, 13);
             this.label11.TabIndex = 102;
             this.label11.Text = "Cód. Foto";
+            this.label11.Visible = false;
             // 
             // frmFilme
             // 

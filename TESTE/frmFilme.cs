@@ -36,13 +36,15 @@ namespace TESTE
             objItem.DsSituacao = cbSituacao.Text;
             objItem.DsAtores = txtAtores.Text;
             objItem.DsDiretor = txtDiretor.Text;
-            objItem.CdFoto = Convert.ToInt32(txtCdFoto.Text);
+            //objItem.CdFoto = Convert.ToInt32(txtCdFoto.Text);
 
 
             DALItem iDAL = new DALItem();
 
             iDAL.InserirItem(objItem);
 
+
+           
 
             MessageBox.Show("Filme cadastrada com sucesso");
         }
@@ -56,6 +58,16 @@ namespace TESTE
             DALItem iDAL = new DALItem();
 
             iDAL.InserirImagem(objItem);
+        }
+
+        private void mtbVlCusto_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mtbPreco_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 

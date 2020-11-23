@@ -211,6 +211,9 @@ namespace TESTE
             }
         }
 
- 
+        private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
