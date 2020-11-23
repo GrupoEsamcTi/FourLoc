@@ -25,7 +25,7 @@ namespace TESTE
             int cdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
-            Pessoa pessoa = pDAL.ObterFuncionario(cdPessoa);
+            Pessoa pessoa = pDAL.ObterCliente(cdPessoa);
 
             if (pessoa == null)
             {
@@ -111,10 +111,6 @@ namespace TESTE
             CarregarCliente();
         }
 
-        private void bttExcluir_Click(object sender, EventArgs e)
-        {
-            Pessoa objPessoa = new Pessoa();
-            objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
             pDAL.ExcluirCliente(objPessoa.CdPessoa);
@@ -177,30 +173,5 @@ namespace TESTE
             dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
-        private void LimparCadastro()
-        {
-            txtCodigo.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            mtbRG.Text = string.Empty;
-            mtbCPF.Text = string.Empty;
-            dtpDtNasc.Text = string.Empty;
-            cbEstado.Text = string.Empty;
-            txtEndereco.Text = string.Empty;
-            txtEstado.Text = string.Empty;
-            txtCidade.Text = string.Empty;
-            txtEmail.Text = string.Empty;
-            mtbCEP.Text = string.Empty;
-            mtbTel.Text = string.Empty;
-            mtbCel.Text = string.Empty;
-            cbStatus.Text = string.Empty;
-            rbMasculino.Checked = true;
-            rbFeminino.Checked = false;
-
-        }
-
-        private void frmCadastroCliente_Load(object sender, EventArgs e)
-        {
-            CarregarCliente();
-        }
     }
 }

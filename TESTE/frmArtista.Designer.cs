@@ -40,7 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dtpDtNasc = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@
             this.bttExcluir.TabIndex = 98;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
             // 
             // bttCad
             // 
@@ -79,6 +80,7 @@
             this.bttCad.TabIndex = 97;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
+            this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
             // 
             // label2
             // 
@@ -146,16 +148,16 @@
             this.label3.TabIndex = 74;
             this.label3.Text = "Data Nasc.";
             // 
-            // comboBox1
+            // cbTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
             "Diretor",
             "Ator"});
-            this.comboBox1.Location = new System.Drawing.Point(396, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(83, 21);
-            this.comboBox1.TabIndex = 101;
+            this.cbTipo.Location = new System.Drawing.Point(396, 72);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(83, 21);
+            this.cbTipo.TabIndex = 101;
             // 
             // label4
             // 
@@ -172,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 165);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.bttAtualizar);
             this.Controls.Add(this.bttExcluir);
@@ -206,7 +208,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpDtNasc;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label4;
     }
 }

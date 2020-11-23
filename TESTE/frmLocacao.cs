@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
+using DAL;
 
 namespace TESTE
 {
@@ -17,6 +19,10 @@ namespace TESTE
             InitializeComponent();
         }
 
-
+        private void txtCodigoF_TextChanged(object sender, EventArgs e)
+        {
+            DALItem iDAL = new DALItem();
+            iDAL.ListarLocacaoF();
+        }
     }
 }
