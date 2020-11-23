@@ -38,6 +38,7 @@ namespace TESTE
             cbStatus.Text = string.Empty;
             rbMasculino.Checked = true;
             rbFeminino.Checked = false;
+            CarregarCliente();
 
         }
 
@@ -84,6 +85,8 @@ namespace TESTE
 
 
             }
+
+            CarregarCliente();
         }
 
 
@@ -204,6 +207,10 @@ namespace TESTE
             dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
+        private void frmCadastroCliente_Load(object sender, EventArgs e)
+        {
+            CarregarCliente();
+        }
     }
 
 }
