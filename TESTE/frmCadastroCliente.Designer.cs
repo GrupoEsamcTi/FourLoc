@@ -94,6 +94,7 @@
             "Casada",
             "Divorciado"});
             this.cbEstado.Location = new System.Drawing.Point(475, 64);
+            this.cbEstado.MaxDropDownItems = 7;
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(83, 21);
             this.cbEstado.TabIndex = 61;
@@ -104,7 +105,7 @@
             this.dtpDtNasc.Location = new System.Drawing.Point(170, 65);
             this.dtpDtNasc.Name = "dtpDtNasc";
             this.dtpDtNasc.Size = new System.Drawing.Size(97, 20);
-            this.dtpDtNasc.TabIndex = 43;
+            this.dtpDtNasc.TabIndex = 4;
             this.dtpDtNasc.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
             // 
             // txtEmail
@@ -112,7 +113,7 @@
             this.txtEmail.Location = new System.Drawing.Point(147, 196);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(411, 20);
-            this.txtEmail.TabIndex = 59;
+            this.txtEmail.TabIndex = 14;
             // 
             // mtbCel
             // 
@@ -120,7 +121,7 @@
             this.mtbCel.Mask = "(00) 00000-0000";
             this.mtbCel.Name = "mtbCel";
             this.mtbCel.Size = new System.Drawing.Size(100, 20);
-            this.mtbCel.TabIndex = 58;
+            this.mtbCel.TabIndex = 16;
             // 
             // mtbTel
             // 
@@ -128,7 +129,7 @@
             this.mtbTel.Mask = "(00) 0000-0000";
             this.mtbTel.Name = "mtbTel";
             this.mtbTel.Size = new System.Drawing.Size(100, 20);
-            this.mtbTel.TabIndex = 57;
+            this.mtbTel.TabIndex = 15;
             // 
             // mtbCEP
             // 
@@ -136,28 +137,28 @@
             this.mtbCEP.Mask = "00000-000";
             this.mtbCEP.Name = "mtbCEP";
             this.mtbCEP.Size = new System.Drawing.Size(95, 20);
-            this.mtbCEP.TabIndex = 56;
+            this.mtbCEP.TabIndex = 13;
             // 
             // txtEstado
             // 
             this.txtEstado.Location = new System.Drawing.Point(351, 156);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(54, 20);
-            this.txtEstado.TabIndex = 55;
+            this.txtEstado.TabIndex = 12;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(161, 156);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(135, 20);
-            this.txtEndereco.TabIndex = 54;
+            this.txtEndereco.TabIndex = 11;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(475, 115);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(83, 20);
-            this.txtCidade.TabIndex = 53;
+            this.txtCidade.TabIndex = 10;
             // 
             // label15
             // 
@@ -282,7 +283,7 @@
             this.mtbRG.Mask = "00.000.000-0";
             this.mtbRG.Name = "mtbRG";
             this.mtbRG.Size = new System.Drawing.Size(100, 20);
-            this.mtbRG.TabIndex = 38;
+            this.mtbRG.TabIndex = 8;
             // 
             // mtbCPF
             // 
@@ -290,7 +291,7 @@
             this.mtbCPF.Mask = "000.000.000-00";
             this.mtbCPF.Name = "mtbCPF";
             this.mtbCPF.Size = new System.Drawing.Size(100, 20);
-            this.mtbCPF.TabIndex = 37;
+            this.mtbCPF.TabIndex = 9;
             // 
             // rbFeminino
             // 
@@ -298,7 +299,7 @@
             this.rbFeminino.Location = new System.Drawing.Point(319, 82);
             this.rbFeminino.Name = "rbFeminino";
             this.rbFeminino.Size = new System.Drawing.Size(67, 17);
-            this.rbFeminino.TabIndex = 36;
+            this.rbFeminino.TabIndex = 6;
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
             // 
@@ -309,7 +310,7 @@
             this.rbMasculino.Location = new System.Drawing.Point(319, 59);
             this.rbMasculino.Name = "rbMasculino";
             this.rbMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rbMasculino.TabIndex = 35;
+            this.rbMasculino.TabIndex = 5;
             this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
             this.rbMasculino.UseVisualStyleBackColor = true;
@@ -328,14 +329,14 @@
             this.txtNome.Location = new System.Drawing.Point(305, 23);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(253, 20);
-            this.txtNome.TabIndex = 33;
+            this.txtNome.TabIndex = 3;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(156, 23);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(36, 20);
-            this.txtCodigo.TabIndex = 32;
+            this.txtCodigo.TabIndex = 1;
             // 
             // label1
             // 
@@ -351,7 +352,7 @@
             this.bttCad.Location = new System.Drawing.Point(180, 273);
             this.bttCad.Name = "bttCad";
             this.bttCad.Size = new System.Drawing.Size(75, 23);
-            this.bttCad.TabIndex = 62;
+            this.bttCad.TabIndex = 18;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
             this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
@@ -361,7 +362,7 @@
             this.bttExcluir.Location = new System.Drawing.Point(285, 273);
             this.bttExcluir.Name = "bttExcluir";
             this.bttExcluir.Size = new System.Drawing.Size(75, 23);
-            this.bttExcluir.TabIndex = 63;
+            this.bttExcluir.TabIndex = 19;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
             this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click_1);
@@ -371,7 +372,7 @@
             this.bttAtualizar.Location = new System.Drawing.Point(394, 273);
             this.bttAtualizar.Name = "bttAtualizar";
             this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttAtualizar.TabIndex = 64;
+            this.bttAtualizar.TabIndex = 20;
             this.bttAtualizar.Text = "Atualizar";
             this.bttAtualizar.UseVisualStyleBackColor = true;
             this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
@@ -381,7 +382,7 @@
             this.bttPesq.Location = new System.Drawing.Point(198, 21);
             this.bttPesq.Name = "bttPesq";
             this.bttPesq.Size = new System.Drawing.Size(57, 23);
-            this.bttPesq.TabIndex = 65;
+            this.bttPesq.TabIndex = 2;
             this.bttPesq.Text = "Pesq";
             this.bttPesq.UseVisualStyleBackColor = true;
             this.bttPesq.Click += new System.EventHandler(this.bttPesq_Click);
@@ -552,7 +553,7 @@
             this.cbStatus.Location = new System.Drawing.Point(475, 234);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(83, 21);
-            this.cbStatus.TabIndex = 67;
+            this.cbStatus.TabIndex = 17;
             // 
             // frmCadastroCliente
             // 

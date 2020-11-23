@@ -43,7 +43,7 @@
             this.bttPesq.Location = new System.Drawing.Point(136, 29);
             this.bttPesq.Name = "bttPesq";
             this.bttPesq.Size = new System.Drawing.Size(57, 23);
-            this.bttPesq.TabIndex = 105;
+            this.bttPesq.TabIndex = 2;
             this.bttPesq.Text = "Pesq";
             this.bttPesq.UseVisualStyleBackColor = true;
             this.bttPesq.Click += new System.EventHandler(this.bttPesq_Click);
@@ -62,14 +62,14 @@
             this.txtGenero.Location = new System.Drawing.Point(250, 31);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(242, 20);
-            this.txtGenero.TabIndex = 103;
+            this.txtGenero.TabIndex = 3;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(94, 31);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(36, 20);
-            this.txtCodigo.TabIndex = 102;
+            this.txtCodigo.TabIndex = 1;
             // 
             // label1
             // 
@@ -85,7 +85,7 @@
             this.bttAtualizar.Location = new System.Drawing.Point(368, 75);
             this.bttAtualizar.Name = "bttAtualizar";
             this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttAtualizar.TabIndex = 108;
+            this.bttAtualizar.TabIndex = 6;
             this.bttAtualizar.Text = "Atualizar";
             this.bttAtualizar.UseVisualStyleBackColor = true;
             this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
@@ -95,7 +95,7 @@
             this.bttExcluir.Location = new System.Drawing.Point(243, 75);
             this.bttExcluir.Name = "bttExcluir";
             this.bttExcluir.Size = new System.Drawing.Size(75, 23);
-            this.bttExcluir.TabIndex = 107;
+            this.bttExcluir.TabIndex = 5;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
             this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
@@ -105,7 +105,7 @@
             this.bttCad.Location = new System.Drawing.Point(117, 75);
             this.bttCad.Name = "bttCad";
             this.bttCad.Size = new System.Drawing.Size(75, 23);
-            this.bttCad.TabIndex = 106;
+            this.bttCad.TabIndex = 4;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
             this.bttCad.Click += new System.EventHandler(this.bttCad_Click);

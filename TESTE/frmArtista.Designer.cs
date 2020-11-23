@@ -49,25 +49,27 @@
             this.bttPesq.Location = new System.Drawing.Point(130, 29);
             this.bttPesq.Name = "bttPesq";
             this.bttPesq.Size = new System.Drawing.Size(57, 23);
-            this.bttPesq.TabIndex = 100;
+            this.bttPesq.TabIndex = 2;
             this.bttPesq.Text = "Pesq";
             this.bttPesq.UseVisualStyleBackColor = true;
+            this.bttPesq.Click += new System.EventHandler(this.bttPesq_Click);
             // 
             // bttAtualizar
             // 
             this.bttAtualizar.Location = new System.Drawing.Point(362, 122);
             this.bttAtualizar.Name = "bttAtualizar";
             this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttAtualizar.TabIndex = 99;
+            this.bttAtualizar.TabIndex = 9;
             this.bttAtualizar.Text = "Atualizar";
             this.bttAtualizar.UseVisualStyleBackColor = true;
+            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
             // 
             // bttExcluir
             // 
             this.bttExcluir.Location = new System.Drawing.Point(230, 122);
             this.bttExcluir.Name = "bttExcluir";
             this.bttExcluir.Size = new System.Drawing.Size(75, 23);
-            this.bttExcluir.TabIndex = 98;
+            this.bttExcluir.TabIndex = 8;
             this.bttExcluir.Text = "Excluir";
             this.bttExcluir.UseVisualStyleBackColor = true;
             this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
@@ -77,7 +79,7 @@
             this.bttCad.Location = new System.Drawing.Point(112, 122);
             this.bttCad.Name = "bttCad";
             this.bttCad.Size = new System.Drawing.Size(75, 23);
-            this.bttCad.TabIndex = 97;
+            this.bttCad.TabIndex = 7;
             this.bttCad.Text = "Cadastrar";
             this.bttCad.UseVisualStyleBackColor = true;
             this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
@@ -96,14 +98,14 @@
             this.txtNome.Location = new System.Drawing.Point(237, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(253, 20);
-            this.txtNome.TabIndex = 68;
+            this.txtNome.TabIndex = 3;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(88, 31);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(36, 20);
-            this.txtCodigo.TabIndex = 67;
+            this.txtCodigo.TabIndex = 1;
             // 
             // label1
             // 
@@ -119,7 +121,7 @@
             this.txtCidade.Location = new System.Drawing.Point(263, 73);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(83, 20);
-            this.txtCidade.TabIndex = 88;
+            this.txtCidade.TabIndex = 5;
             // 
             // label10
             // 
@@ -136,7 +138,7 @@
             this.dtpDtNasc.Location = new System.Drawing.Point(115, 73);
             this.dtpDtNasc.Name = "dtpDtNasc";
             this.dtpDtNasc.Size = new System.Drawing.Size(97, 20);
-            this.dtpDtNasc.TabIndex = 78;
+            this.dtpDtNasc.TabIndex = 4;
             this.dtpDtNasc.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
             // 
             // label3
@@ -157,7 +159,7 @@
             this.cbTipo.Location = new System.Drawing.Point(396, 72);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(83, 21);
-            this.cbTipo.TabIndex = 101;
+            this.cbTipo.TabIndex = 6;
             // 
             // label4
             // 

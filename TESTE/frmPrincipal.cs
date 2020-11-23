@@ -51,5 +51,28 @@ namespace TESTE
             tela.Show();
 
         }
+
+        private void artistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArtista tela = new frmArtista();
+            tela.MdiParent = this;
+            tela.Show();
+
+        }
+
+        private void gêneroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGenero tela = new frmGenero();
+            tela.MdiParent = this;
+            tela.Show();
+        }
+
+        private void dEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucao tela = new frmDevolucao();
+            tela.MdiParent = this;
+            tela.Show();
+
+        }
     }
 }
