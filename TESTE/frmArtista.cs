@@ -41,7 +41,7 @@ namespace TESTE
 
                 objPessoa.NmPessoa = txtNome.Text;
                 objPessoa.DtNascimento = dtpDtNasc.Value;
-                objPessoa.DsCidade = txtCidade.Text;
+                objPessoa.DsPais = txtCidade.Text;
                 objPessoa.DsTipo = cbTipo.Text;
 
                 DALPessoa pDAL = new DALPessoa();
@@ -75,10 +75,11 @@ namespace TESTE
         private void bttAtualizar_Click(object sender, EventArgs e)
         {
             Pessoa objPessoa = new Pessoa();
-
+            
+            objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
             objPessoa.NmPessoa = txtNome.Text;
             objPessoa.DtNascimento = dtpDtNasc.Value;
-            objPessoa.DsCidade = txtCidade.Text;
+            objPessoa.DsPais = txtCidade.Text;
             objPessoa.DsTipo = cbTipo.Text;
 
 
@@ -95,10 +96,10 @@ namespace TESTE
 
         private void bttPesq_Click(object sender, EventArgs e)
         {
-            int cdPessoa = Convert.ToInt32(txtCodigo.Text);
+             int CdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
-            Pessoa pessoa = pDAL.ObterCliente(cdPessoa);
+            Pessoa pessoa = pDAL.ObterArtista(CdPessoa);
 
             if (pessoa == null)
             {
@@ -107,9 +108,9 @@ namespace TESTE
 
             else
             {
-                txtNome.Text = pessoa.NmPessoa;
+                txtNome.Text = pessoa.NmPessoa;                               
                 dtpDtNasc.Value = pessoa.DtNascimento;
-                txtCidade.Text = pessoa.DsCidade;
+                txtCidade.Text = pessoa.DsPais;
                 cbTipo.Text = pessoa.DsTipo;
             }
 

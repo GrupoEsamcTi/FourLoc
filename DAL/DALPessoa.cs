@@ -496,7 +496,7 @@ namespace DAL
 
         }
 
-        public Pessoa ObterArtista(string NmPessoa)
+        public Pessoa ObterArtista(int  CdPessoa)
 
         {
             Pessoa pessoa = null;
@@ -505,10 +505,10 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_ARTISTA WHERE NOME_A = @nome";
+            string sql = "SELECT * FROM TBL_ARTISTA WHERE CODIGO_A = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@nome", NmPessoa);
+            cmd.Parameters.AddWithValue("@cod", CdPessoa);
 
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -517,8 +517,8 @@ namespace DAL
 
                 pessoa = new Pessoa();
                 pessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_A"]);
-                pessoa.NmPessoa = NmPessoa;
-                pessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC_C"]);
+                pessoa.NmPessoa = dr["NOME_A"].ToString();
+                pessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC"]);
                 pessoa.DsPais = dr["PAIS_NASC"].ToString();
                 pessoa.DsTipo = dr["TIPO_A"].ToString();
 
@@ -557,7 +557,7 @@ namespace DAL
                     objPessoa = new Pessoa();
                     objPessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_C"]);
                     objPessoa.NmPessoa = dr["NOME_C"].ToString();
-                    objPessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC_C"]);
+                    objPessoa.DtNascimento = Convert.ToDateTime(dr["DT_NASC"]);
                     objPessoa.DsPais = dr["PAIS_NASC"].ToString();
                     objPessoa.DsTipo = dr["TIPO_A"].ToString();
 
@@ -581,7 +581,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "UPDATE TBL_CLIENTES SET NOME_A = @Nome, DT_NASC = @nasc, PAIS_NASC = @pais, TIPO_A = @tipo WHERE CODIGO_A = @cod";
+            string sql = "UPDATE TBL_ARTISTA SET NOME_A = @Nome, DT_NASC = @nasc, PAIS_NASC = @pais, TIPO_A = @tipo WHERE CODIGO_A = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cod", objPessoa.CdPessoa);
             cmd.Parameters.AddWithValue("@Nome", objPessoa.NmPessoa);
