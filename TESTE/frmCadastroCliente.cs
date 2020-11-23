@@ -18,7 +18,28 @@ namespace TESTE
         {
             InitializeComponent();
         }
-        
+
+
+        private void LimparCadastro()
+        {
+            txtCodigo.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            mtbRG.Text = string.Empty;
+            mtbCPF.Text = string.Empty;
+            dtpDtNasc.Text = string.Empty;
+            cbEstado.Text = string.Empty;
+            txtEndereco.Text = string.Empty;
+            txtEstado.Text = string.Empty;
+            txtCidade.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            mtbCEP.Text = string.Empty;
+            mtbTel.Text = string.Empty;
+            mtbCel.Text = string.Empty;
+            cbStatus.Text = string.Empty;
+            rbMasculino.Checked = true;
+            rbFeminino.Checked = false;
+
+        }
 
         private void bttPesq_Click(object sender, EventArgs e)
         {
@@ -112,12 +133,21 @@ namespace TESTE
         }
 
 
+           
+        private void bttExcluir_Click(object sender, EventArgs e)
+        {
+            Pessoa objPessoa = new Pessoa(); 
             DALPessoa pDAL = new DALPessoa();
             pDAL.ExcluirCliente(objPessoa.CdPessoa);
             MessageBox.Show("Cliente excluido com sucesso");
 
             CarregarCliente();
+
         }
+   
+
+        
+            
 
         private void bttAtualizar_Click(object sender, EventArgs e)
         {
@@ -140,38 +170,41 @@ namespace TESTE
                     objPessoa.DsEstadoCivil = 'D';
                     break;
             }
-
-            objPessoa.NrRG = mtbRG.Text;
-            objPessoa.NrCPF = mtbCPF.Text;
-            objPessoa.DsCidade = txtCidade.Text;
-            objPessoa.DsEndereco = txtEndereco.Text;
-            objPessoa.DsEstado = txtEstado.Text;
-            objPessoa.DsCEP = mtbCEP.Text;
-            objPessoa.DsEmail = txtEmail.Text;
-            objPessoa.NrTelefone = mtbTel.Text;
-            objPessoa.NrCelular = mtbCel.Text;
-            objPessoa.DsStatus = cbStatus.Text;
-
-
-            DALPessoa pDAL = new DALPessoa();
-
-            pDAL.AtualizarCliente(objPessoa);
+                    objPessoa.NrRG = mtbRG.Text;
+                    objPessoa.NrCPF = mtbCPF.Text;
+                    objPessoa.DsCidade = txtCidade.Text;
+                    objPessoa.DsEndereco = txtEndereco.Text;
+                    objPessoa.DsEstado = txtEstado.Text;
+                    objPessoa.DsCEP = mtbCEP.Text;
+                    objPessoa.DsEmail = txtEmail.Text;
+                    objPessoa.NrTelefone = mtbTel.Text;
+                    objPessoa.NrCelular = mtbCel.Text;
+                    objPessoa.DsStatus = cbStatus.Text;
 
 
-            MessageBox.Show("Cliente atualizado com sucesso");
+                    DALPessoa pDAL = new DALPessoa();
 
-            LimparCadastro();
-            pDAL.ListarCliente();
+                    pDAL.AtualizarCliente(objPessoa);
+
+
+                    MessageBox.Show("Cliente atualizado com sucesso");
+
+                    LimparCadastro();
+                    pDAL.ListarCliente();
+
+                    CarregarCliente();
+
             
-            CarregarCliente();
         }
 
 
-        private void CarregarCliente()
+    private void CarregarCliente()
         {
             DALPessoa pDAL = new DALPessoa();
             dgvCliente.DataSource = pDAL.ListarCliente();
         }
 
     }
+
 }
+

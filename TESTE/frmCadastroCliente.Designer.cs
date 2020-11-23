@@ -59,11 +59,8 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bttCad = new System.Windows.Forms.Button();
-            this.bttExcluir = new System.Windows.Forms.Button();
-            this.bttAtualizar = new System.Windows.Forms.Button();
             this.bttPesq = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsCEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +80,9 @@
             this.DsCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.bttExcluir = new System.Windows.Forms.Button();
+            this.bttAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +97,7 @@
             this.cbEstado.MaxDropDownItems = 7;
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(83, 21);
-            this.cbEstado.TabIndex = 61;
+            this.cbEstado.TabIndex = 7;
             // 
             // dtpDtNasc
             // 
@@ -357,26 +357,6 @@
             this.bttCad.UseVisualStyleBackColor = true;
             this.bttCad.Click += new System.EventHandler(this.bttCad_Click);
             // 
-            // bttExcluir
-            // 
-            this.bttExcluir.Location = new System.Drawing.Point(285, 273);
-            this.bttExcluir.Name = "bttExcluir";
-            this.bttExcluir.Size = new System.Drawing.Size(75, 23);
-            this.bttExcluir.TabIndex = 19;
-            this.bttExcluir.Text = "Excluir";
-            this.bttExcluir.UseVisualStyleBackColor = true;
-            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click_1);
-            // 
-            // bttAtualizar
-            // 
-            this.bttAtualizar.Location = new System.Drawing.Point(394, 273);
-            this.bttAtualizar.Name = "bttAtualizar";
-            this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttAtualizar.TabIndex = 20;
-            this.bttAtualizar.Text = "Atualizar";
-            this.bttAtualizar.UseVisualStyleBackColor = true;
-            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
-            // 
             // bttPesq
             // 
             this.bttPesq.Location = new System.Drawing.Point(198, 21);
@@ -414,18 +394,6 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(645, 122);
             this.dgvCliente.TabIndex = 66;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Ativado",
-            "Pendente",
-            "Desativado"});
-            this.cbStatus.Location = new System.Drawing.Point(475, 234);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(83, 21);
-            this.cbStatus.TabIndex = 67;
             // 
             // CdPessoa
             // 
@@ -563,22 +531,45 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Ativado",
             "Pendente",
+            "Desativado",
+            "Ativado",
+            "Pendente",
             "Desativado"});
             this.cbStatus.Location = new System.Drawing.Point(475, 234);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(83, 21);
             this.cbStatus.TabIndex = 17;
             // 
+            // bttExcluir
+            // 
+            this.bttExcluir.Location = new System.Drawing.Point(309, 273);
+            this.bttExcluir.Name = "bttExcluir";
+            this.bttExcluir.Size = new System.Drawing.Size(75, 23);
+            this.bttExcluir.TabIndex = 19;
+            this.bttExcluir.Text = "Excluir";
+            this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
+            // 
+            // bttAtualizar
+            // 
+            this.bttAtualizar.Location = new System.Drawing.Point(443, 273);
+            this.bttAtualizar.Name = "bttAtualizar";
+            this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.bttAtualizar.TabIndex = 20;
+            this.bttAtualizar.Text = "Atualizar";
+            this.bttAtualizar.UseVisualStyleBackColor = true;
+            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 457);
+            this.Controls.Add(this.bttAtualizar);
+            this.Controls.Add(this.bttExcluir);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.bttPesq);
-            this.Controls.Add(this.bttAtualizar);
-            this.Controls.Add(this.bttExcluir);
             this.Controls.Add(this.bttCad);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.dtpDtNasc);
@@ -612,7 +603,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
             this.Text = "Cadastro Cliente";
-            this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -652,8 +642,6 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttCad;
-        private System.Windows.Forms.Button bttExcluir;
-        private System.Windows.Forms.Button bttAtualizar;
         private System.Windows.Forms.Button bttPesq;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.ComboBox cbStatus;
@@ -676,5 +664,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCidade;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Excluir;
+        private System.Windows.Forms.Button bttExcluir;
+        private System.Windows.Forms.Button bttAtualizar;
     }
 }
