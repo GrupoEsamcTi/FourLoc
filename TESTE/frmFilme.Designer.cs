@@ -500,6 +500,7 @@
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmFilme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Filmes";
             this.Load += new System.EventHandler(this.frmFilme_Load);
             this.ResumeLayout(false);

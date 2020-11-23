@@ -291,6 +291,7 @@
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmLocacao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Locação";
             this.ResumeLayout(false);
             this.PerformLayout();

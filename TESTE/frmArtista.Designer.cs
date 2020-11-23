@@ -190,6 +190,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "frmArtista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Ator e Diretores";
             this.ResumeLayout(false);
             this.PerformLayout();

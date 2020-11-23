@@ -250,6 +250,7 @@
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmDevolucao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Devolução";
             this.ResumeLayout(false);
             this.PerformLayout();
