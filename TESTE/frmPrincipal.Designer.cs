@@ -32,12 +32,13 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gêneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.artistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gêneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@
             this.gêneroToolStripMenuItem,
             this.filmeToolStripMenuItem,
             this.locaçãoToolStripMenuItem,
-            this.dEToolStripMenuItem});
+            this.dEToolStripMenuItem,
+            this.testeToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.cadastroToolStripMenuItem.Text = "Registro";
@@ -80,6 +82,20 @@
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
+            // artistaToolStripMenuItem
+            // 
+            this.artistaToolStripMenuItem.Name = "artistaToolStripMenuItem";
+            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.artistaToolStripMenuItem.Text = "Artista";
+            this.artistaToolStripMenuItem.Click += new System.EventHandler(this.artistaToolStripMenuItem_Click);
+            // 
+            // gêneroToolStripMenuItem
+            // 
+            this.gêneroToolStripMenuItem.Name = "gêneroToolStripMenuItem";
+            this.gêneroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gêneroToolStripMenuItem.Text = "Gênero";
+            this.gêneroToolStripMenuItem.Click += new System.EventHandler(this.gêneroToolStripMenuItem_Click);
             // 
             // filmeToolStripMenuItem
             // 
@@ -102,25 +118,18 @@
             this.dEToolStripMenuItem.Text = "Devolução";
             this.dEToolStripMenuItem.Click += new System.EventHandler(this.dEToolStripMenuItem_Click);
             // 
-            // artistaToolStripMenuItem
-            // 
-            this.artistaToolStripMenuItem.Name = "artistaToolStripMenuItem";
-            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.artistaToolStripMenuItem.Text = "Artista";
-            this.artistaToolStripMenuItem.Click += new System.EventHandler(this.artistaToolStripMenuItem_Click);
-            // 
-            // gêneroToolStripMenuItem
-            // 
-            this.gêneroToolStripMenuItem.Name = "gêneroToolStripMenuItem";
-            this.gêneroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gêneroToolStripMenuItem.Text = "Gênero";
-            this.gêneroToolStripMenuItem.Click += new System.EventHandler(this.gêneroToolStripMenuItem_Click);
-            // 
             // listagemToolStripMenuItem
             // 
             this.listagemToolStripMenuItem.Name = "listagemToolStripMenuItem";
             this.listagemToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.listagemToolStripMenuItem.Text = "Listagem";
+            // 
+            // testeToolStripMenuItem
+            // 
+            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
+            this.testeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testeToolStripMenuItem.Text = "Teste";
+            this.testeToolStripMenuItem.Click += new System.EventHandler(this.testeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -152,6 +161,7 @@
         private System.Windows.Forms.ToolStripMenuItem dEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem artistaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gêneroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
     }
 }
 

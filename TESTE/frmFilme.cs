@@ -49,16 +49,16 @@ namespace TESTE
             MessageBox.Show("Filme cadastrada com sucesso");
         }
 
-        private void bttIns_Click(object sender, EventArgs e)
-        {
-            Item objItem = new Item();
+        //private void bttIns_Click(object sender, EventArgs e)
+        //{
+        //    Item objItem = new Item();
 
-            objItem.NmFotoCapa = txtNmCapa.Text;
+        //    objItem.NmFotoCapa = txtNmCapa.Text;
 
-            DALItem iDAL = new DALItem();
+        //    DALItem iDAL = new DALItem();
 
-            iDAL.InserirImagem(objItem);
-        }
+        //    iDAL.InserirImagem(objItem);
+        //}
 
         private void mtbVlCusto_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {

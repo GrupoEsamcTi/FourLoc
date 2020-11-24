@@ -312,6 +312,37 @@ namespace DAL
 
         }
 
+        public Pessoa ObterCPFC(string NmPessoa)
+
+        {
+            Pessoa pessoa = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT CPF_C FROM TBL_CLIENTES WHERE NOME_C = @nome";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@nome", NmPessoa);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows && dr.Read())
+            {
+
+                pessoa = new Pessoa();
+                pessoa.NmPessoa = NmPessoa;
+                pessoa.NrCPF = dr["CPF_C"].ToString();
+                
+
+            }
+
+            conn.Close();
+
+            return pessoa;
+
+        }
 
         public List<Pessoa> ListarCliente()
         {

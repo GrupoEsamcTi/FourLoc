@@ -63,6 +63,16 @@ namespace TESTE.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Busca {
+            get {
+                object obj = ResourceManager.GetObject("Busca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edicao {
             get {
                 object obj = ResourceManager.GetObject("edicao", resourceCulture);
@@ -116,6 +126,26 @@ namespace TESTE.Properties {
         internal static System.Drawing.Bitmap Icone_Edit___Copia {
             get {
                 object obj = ResourceManager.GetObject("Icone Edit - Copia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_pesquisa_png_7_Transparent_Images {
+            get {
+                object obj = ResourceManager.GetObject("icone-pesquisa-png-7-Transparent-Images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_pesquisa_png_7_Transparent_Images1 {
+            get {
+                object obj = ResourceManager.GetObject("icone-pesquisa-png-7-Transparent-Images1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

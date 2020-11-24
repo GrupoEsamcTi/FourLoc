@@ -74,5 +74,13 @@ namespace TESTE
             tela.Show();
 
         }
+
+        private void testeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TESTE tela = new TESTE();
+            tela.MdiParent = this;
+            tela.Show();
+
+        }
     }
 }

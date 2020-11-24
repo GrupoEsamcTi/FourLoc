@@ -431,7 +431,6 @@
             this.bttIns.Text = "Inserir";
             this.bttIns.UseVisualStyleBackColor = true;
             this.bttIns.Visible = false;
-            this.bttIns.Click += new System.EventHandler(this.bttIns_Click);
             // 
             // txtCdFoto
             // 

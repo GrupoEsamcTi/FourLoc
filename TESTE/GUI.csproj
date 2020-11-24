@@ -96,6 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TESTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTE.Designer.cs">
+      <DependentUpon>TESTE.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmArtista.resx">
       <DependentUpon>frmArtista.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TESTE.resx">
+      <DependentUpon>TESTE.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,6 +179,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icone Delete - Copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Busca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone-pesquisa-png-7-Transparent-Images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone-pesquisa-png-7-Transparent-Images1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

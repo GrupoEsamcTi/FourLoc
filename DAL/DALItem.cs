@@ -44,22 +44,48 @@ namespace DAL
 
 
 
-        public void InserirImagem(Item objItem)
+        public void InserirImagem(string objItem)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
 
-            string sql = "INSERT INTO TBL_ITEM VALUES (@nmfoto,FOTO_CAPA) SELECT '@nmfoto',* FROM OPENROWSET(BULK N'C:\\Users\\MISL\\FourLoc\\Imagens\\@nmfoto', SINGLE_BLOB) Load;";
+            string sql = "INSERT INTO TBL_IMAGEM VALUES (@foto)";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@nmfoto", objItem.NmFotoCapa);
-           
+            cmd.Parameters.AddWithValue("@foto", objItem);
 
             cmd.ExecuteNonQuery();
 
             conn.Close();
 
 
+        }
+
+
+        public string SELEÇÃOImagem()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM TBL_IMAGEM ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            string imagem = "";
+
+            if (dr.HasRows && dr.Read())
+            {
+
+                imagem = dr["IMAGEM"].ToString();
+
+
+            }
+
+            conn.Close();
+
+            return imagem;
         }
 
         public Item ObterItem(int cdItem)
@@ -480,12 +506,54 @@ namespace DAL
 
             }
 
+            
+
             conn.Close();
 
+            
             return listaPessoa;
 
         }
 
+
+        public List<Pessoa> ListarLocacaoC()
+        {
+            List<Pessoa> listaPessoa = new List<Pessoa>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT NOME_C, CPF_C FROM TBL_CLIENTES";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Pessoa objPessoa;
+                while (dr.Read())
+                {
+
+                    objPessoa = new Pessoa();
+                    objPessoa.NmPessoa = dr["NOME_C"].ToString();
+                    objPessoa.NrCPF = dr["CPF_C"].ToString();
+
+
+                    listaPessoa.Add(objPessoa);
+                }
+
+            }
+
+
+
+            conn.Close();
+
+
+            return listaPessoa;
+
+        }
 
         public List<Item> ListarLocacao()
         {

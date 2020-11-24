@@ -183,7 +183,7 @@ namespace TESTE
 
         private void bttPesq_Click_1(object sender, EventArgs e)
         {
-            int cdPessoa = Convert.ToInt32(txtCodigo.Text);
+               int cdPessoa = Convert.ToInt32(txtCodigo.Text);
 
             DALPessoa pDAL = new DALPessoa();
             Pessoa pessoa = pDAL.ObterFuncionario(cdPessoa);
