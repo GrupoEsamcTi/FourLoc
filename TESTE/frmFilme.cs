@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using DAL;
+using System.IO;
 
 namespace TESTE
 {
@@ -19,16 +20,28 @@ namespace TESTE
             InitializeComponent();
         }
 
-        private void frmFilme_Load(object sender, EventArgs e)
-        {
 
+        private void CarregarItem()
+        {
+            DALItem iDAL = new DALItem();
+            dgvItem.DataSource = iDAL.ListarItem();
         }
 
+
         private void bttInserir_Click(object sender, EventArgs e)
+
         {
+            string nmFotoCapa = txtFoto.Text;
+
+            string caminho = $@"C:\Users\MISL\FourLoc\Imagens\Capa\{nmFotoCapa}";
+
+            var Imagem = File.ReadAllBytes(caminho);
+
+            var base64image = Convert.ToBase64String(Imagem);
+
             Item objItem = new Item();
 
-            objItem.CdBarras = Convert.ToInt32(txtCdBarras.Text);
+            objItem.CdBarras = txtCdBarras.Text;
             objItem.DsTitulo = txtTitulo.Text;
             objItem.NrPreco = Convert.ToDecimal(mtbPreco.Text);
             objItem.DtAdquirida = dtpDtAdquirida.Value;
@@ -36,39 +49,60 @@ namespace TESTE
             objItem.DsSituacao = cbSituacao.Text;
             objItem.DsAtores = txtAtores.Text;
             objItem.DsDiretor = txtDiretor.Text;
-            //objItem.CdFoto = Convert.ToInt32(txtCdFoto.Text);
+            objItem.DsFotoCapa = (base64image);
 
 
             DALItem iDAL = new DALItem();
 
             iDAL.InserirItem(objItem);
-
-
-           
+                  
 
             MessageBox.Show("Filme cadastrada com sucesso");
         }
 
-        //private void bttIns_Click(object sender, EventArgs e)
-        //{
-        //    Item objItem = new Item();
-
-        //    objItem.NmFotoCapa = txtNmCapa.Text;
-
-        //    DALItem iDAL = new DALItem();
-
-        //    iDAL.InserirImagem(objItem);
-        //}
-
-        private void mtbVlCusto_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void bttPesq_Click(object sender, EventArgs e)
         {
+            int cdFilme = Convert.ToInt32(txtCodigo.Text);
 
-        }
+            DALItem iDAL = new DALItem();
+            Item item = iDAL.ObterItem(cdFilme);
 
-        private void mtbPreco_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+            if (item == null)
+            {
+                MessageBox.Show("Filme não encontrada.");
+            }
 
+            else
+            {
+                
+                txtCdBarras.Text= item.CdBarras;
+                txtTitulo.Text = item.DsTitulo;
+                txtGenero.Text = item.DsGenero;
+                txtFoto.Text = item.DsFotoCapa;
+                mtbAno.Text = item.DsAno;
+                cbTipo.Text = item.DsTipo;
+                mtbPreco.Text = item.NrPreco.ToString();
+                dtpDtAdquirida.Value = item.DtAdquirida;
+                mtbVlCusto.Text = item.NrValorCusto.ToString();
+
+                if (item.DsSituacao == "Disponivel") 
+                {
+                    cbSituacao.Text = item.DsSituacao;
+
+                }
+                else
+                {
+
+                    cbSituacao.Text = item.DsSituacao;
+
+
+                }
+                txtAtores.Text = item.DsAtores;
+                txtDiretor.Text = item.DsDiretor;
+               
+             }
         }
     }
+
 
 }

@@ -21,7 +21,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO TBL_ITEM VALUES (@cdb, @tit, @preco, @dt_ad, @vlc, @sit, @ator, @dir)";
+            string sql = "INSERT INTO TBL_ITEM VALUES (@cdb, @tit, @preco, @dt_ad, @vlc, @sit, @ator, @dir,@foto,@ano,@tipo)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cdb", objItem.CdBarras);
             cmd.Parameters.AddWithValue("@tit", objItem.DsTitulo);
@@ -31,15 +31,13 @@ namespace DAL
             cmd.Parameters.AddWithValue("@sit", objItem.DsSituacao);
             cmd.Parameters.AddWithValue("@ator", objItem.DsAtores);
             cmd.Parameters.AddWithValue("@dir", objItem.DsDiretor);
-
+            cmd.Parameters.AddWithValue("@foto", objItem.DsFotoCapa);
+            cmd.Parameters.AddWithValue("@ano", objItem.DsAno);
+            cmd.Parameters.AddWithValue("@tipo", objItem.DsTipo);
 
             cmd.ExecuteNonQuery();
 
             conn.Close();
-
-       
-
-
         }
 
 
@@ -97,7 +95,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_ITEM  AS I JOIN TBL_IMAGEM AS M ON I.CODIGO_F = M.CODIGO_F  WHERE CODIGO_I = @cod";
+            string sql = "SELECT * FROM TBL_ITEM  WHERE CODIGO_I = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@cod", cdItem);
@@ -109,6 +107,7 @@ namespace DAL
 
                 item = new Item();
                 item.CdFilme = cdItem;
+                item.CdBarras = dr["CODIGO_B"].ToString();
                 item.DsTitulo = dr["TITULO"].ToString();
                 item.NrPreco = Convert.ToDecimal(dr["PRECO"]);
                 item.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
@@ -116,7 +115,11 @@ namespace DAL
                 item.DsSituacao = dr["SITUACAO"].ToString();
                 item.DsAtores = dr["ATORES_P"].ToString();
                 item.DsDiretor = dr["DIRETOR"].ToString();
-                item.CdFoto = Convert.ToInt32(dr["CODIGO_F"]);
+                item.DsFotoCapa = dr["CAPA_FOTO"].ToString();
+                item.DsAno =dr["ANO"].ToString();
+                item.DsTipo = dr["TIPO"].ToString();
+
+
 
             }
 
@@ -149,7 +152,7 @@ namespace DAL
 
                     objItem = new Item();
                     objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
-                    objItem.CdBarras = Convert.ToInt32(dr["CODIGO_B"]);
+                    objItem.CdBarras = dr["CODIGO_B"].ToString();
                     objItem.DsTitulo = dr["TITULO"].ToString();
                     objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
                     objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
@@ -157,7 +160,8 @@ namespace DAL
                     objItem.DsSituacao = dr["SITUACAO"].ToString();
                     objItem.DsAtores = dr["ATORES_P"].ToString();
                     objItem.DsDiretor = dr["DIRETOR"].ToString();
-                   
+                    objItem.DsFotoCapa = dr["CAPA_FOTO"].ToString();
+
 
                     listaItem.Add(objItem);
                 }
@@ -179,7 +183,7 @@ namespace DAL
             conn.Open();
 
             string sql = "UPDATE TBL_ITEM SET  CODIGO_B = @cdb, TITULO = @tit, PRECO = @preco, DT_ADQUIRIDA = @dta, VALOR_CUSTO = @vlc, SITUACAO = @sit," +
-                " ATORES_P = @ator, DIRETOR = @dir WHERE CODIGO_I = @cod";
+                " ATORES_P = @ator, CAPA_FOTO = @foto DIRETOR = @dir WHERE CODIGO_I = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cod", objItem.CdFilme);
             cmd.Parameters.AddWithValue("@cdb", objItem.CdBarras);
@@ -190,6 +194,8 @@ namespace DAL
             cmd.Parameters.AddWithValue("@sit", objItem.DsSituacao);
             cmd.Parameters.AddWithValue("@ator", objItem.DsAtores);
             cmd.Parameters.AddWithValue("@dir", objItem.DsDiretor);
+            cmd.Parameters.AddWithValue("@foto", objItem.DsFotoCapa);
+
 
             cmd.ExecuteNonQuery();
 
@@ -246,7 +252,7 @@ namespace DAL
 
                     objItem = new Item();
                     objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
-                    objItem.CdBarras = Convert.ToInt32(dr["CODIGO_B"]);
+                    objItem.CdBarras = dr["CODIGO_B"].ToString();
                     objItem.DsTitulo = dr["TITULO"].ToString();
                     objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
                     objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
@@ -577,7 +583,7 @@ namespace DAL
 
                     objItem = new Item();
                     objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
-                    objItem.CdBarras = Convert.ToInt32(dr["CODIGO_B"]);
+                    objItem.CdBarras = dr["CODIGO_B"].ToString();
                     objItem.DsTitulo = dr["TITULO"].ToString();
                     objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
                     objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
@@ -674,7 +680,7 @@ namespace DAL
 
                     objItem = new Item();
                     objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
-                    objItem.CdBarras = Convert.ToInt32(dr["CODIGO_B"]);
+                    objItem.CdBarras = dr["CODIGO_B"].ToString();
                     objItem.DsTitulo = dr["TITULO"].ToString();
                     objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
                     objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);

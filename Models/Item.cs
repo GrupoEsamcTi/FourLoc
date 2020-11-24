@@ -11,7 +11,7 @@ namespace Models
         public int CdFilme { get; set; }
 
         public int CdGenero { get; set; }
-        public int CdBarras { get; set; }
+        public string CdBarras { get; set; }
 
         public int CdLocacao { get; set; }
 
@@ -34,7 +34,7 @@ namespace Models
 
         public string DsGenero { get; set; }
 
-        public char DsAno { get; set; }
+        public string DsAno { get; set; }
 
         public string DsTipo { get; set; }
 
@@ -50,11 +50,7 @@ namespace Models
 
         public string DsDiretor { get; set; }
 
-        public string NmFotoCapa { get; set; }
-
         public string DsFotoCapa { get; set; }
 
-        public int CdFoto { get; set; }
-
-    }
+   }
 }
