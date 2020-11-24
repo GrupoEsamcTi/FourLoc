@@ -128,7 +128,7 @@ namespace TESTE
             pDAL.InserirCliente(objPessoa);
 
 
-            MessageBox.Show("Cliente cadastrada com sucesso");
+            MessageBox.Show("Cliente cadastrado com sucesso","Cadastrado");
 
             LimparCadastro();
 
@@ -138,14 +138,29 @@ namespace TESTE
 
            
         private void bttExcluir_Click(object sender, EventArgs e)
+
         {
-            Pessoa objPessoa = new Pessoa(); 
-            DALPessoa pDAL = new DALPessoa();
-            pDAL.ExcluirCliente(objPessoa.CdPessoa);
-            MessageBox.Show("Cliente excluido com sucesso");
+            DialogResult OpcaoExcluir = new DialogResult();
+            OpcaoExcluir = MessageBox.Show("Deseja excluir esse usuario","Atenção", MessageBoxButtons.YesNo);
 
-            CarregarCliente();
+            if (OpcaoExcluir == DialogResult.Yes)
+            {
 
+                Pessoa objPessoa = new Pessoa();
+                objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
+
+                DALPessoa pDAL = new DALPessoa();
+                pDAL.ExcluirCliente(objPessoa.CdPessoa);
+                MessageBox.Show("Cliente excluido com sucesso","Excluido");
+
+                CarregarCliente();
+            }
+
+            else
+            {
+                MessageBox.Show("Exclusão cancelada","Cancelado");
+
+            }
         }
    
 
@@ -190,7 +205,7 @@ namespace TESTE
                     pDAL.AtualizarCliente(objPessoa);
 
 
-                    MessageBox.Show("Cliente atualizado com sucesso");
+                    MessageBox.Show("Cliente atualizado com sucesso","Atualizado");
 
                     LimparCadastro();
                     pDAL.ListarCliente();
@@ -211,6 +226,92 @@ namespace TESTE
         {
             CarregarCliente();
         }
+
+        private void dgvCliente_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvCliente.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Clique aqui para editar.";
+            dgvCliente.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Clique aqui para excluir.";
+        }
+
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            int CdPessoa = Convert.ToInt32(dgvCliente.Rows[e.RowIndex].Cells["CdPessoa"].Value.ToString());
+
+            if (dgvCliente.Columns[e.ColumnIndex] == dgvCliente.Columns["Editar"])
+            {
+                DALPessoa pDAL = new DALPessoa();
+                Pessoa pessoa = pDAL.ObterCliente(CdPessoa);
+
+                if (pessoa == null)
+                {
+                    MessageBox.Show("Cliente não encontrada.");
+                }
+
+                else
+                {
+                    txtNome.Text = pessoa.NmPessoa;
+                    dtpDtNasc.Value = pessoa.DtNascimento;
+                    rbFeminino.Checked = pessoa.DsSexo == 'F';
+                    rbMasculino.Checked = pessoa.DsSexo == 'M';
+                    switch (pessoa.DsEstadoCivil)
+                    {
+                        case 'S':
+                            cbEstado.Text = "Solteiro";
+                            break;
+                        case 'C':
+                            cbEstado.Text = "Casado";
+                            break;
+                        default:
+                            cbEstado.Text = "Divorciado";
+                            break;
+                    }
+                    mtbRG.Text = pessoa.NrRG;
+                    mtbCPF.Text = pessoa.NrCPF;
+                    txtEndereco.Text = pessoa.DsEndereco;
+                    txtEstado.Text = pessoa.DsEstado;
+                    txtCidade.Text = pessoa.DsCidade;
+                    mtbCEP.Text = pessoa.DsCEP;
+                    txtEmail.Text = pessoa.DsEmail;
+                    mtbTel.Text = pessoa.NrTelefone;
+                    mtbCel.Text = pessoa.NrCelular;
+                    cbStatus.Text = pessoa.DsStatus;
+
+                }
+            }
+            else if (dgvCliente.Columns[e.ColumnIndex] == dgvCliente.Columns["Excluir"])
+            {
+
+
+                DialogResult OpcaoExcluir = new DialogResult();
+                OpcaoExcluir = MessageBox.Show("Deseja excluir esse usuario", "Atenção", MessageBoxButtons.YesNo);
+
+                if (OpcaoExcluir == DialogResult.Yes)
+                {
+
+                    Pessoa objPessoa = new Pessoa();
+                    objPessoa.CdPessoa = Convert.ToInt32(dgvCliente.Rows[e.RowIndex].Cells["CdPessoa"].Value.ToString());
+
+                    DALPessoa pDAL = new DALPessoa();
+                    pDAL.ExcluirCliente(objPessoa.CdPessoa);
+                    MessageBox.Show("Cliente excluido com sucesso","Excluido");
+
+                    CarregarCliente();
+                }
+
+                else
+                {
+                    MessageBox.Show("Exclusão cancelada","Cancelado");
+
+                }
+
+            }
+
+
+        }
+        
     }
 
 }

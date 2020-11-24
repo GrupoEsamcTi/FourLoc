@@ -61,8 +61,15 @@
             this.bttCad = new System.Windows.Forms.Button();
             this.bttPesq = new System.Windows.Forms.Button();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.bttExcluir = new System.Windows.Forms.Button();
+            this.bttAtualizar = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DsStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsCEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NrTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,15 +81,10 @@
             this.DsSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NrRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NrCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DsStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.bttExcluir = new System.Windows.Forms.Button();
-            this.bttAtualizar = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -373,6 +375,8 @@
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdPessoa,
             this.NmPessoa,
+            this.NrCPF,
+            this.DsStatus,
             this.DsCEP,
             this.DsEstado,
             this.NrTelefone,
@@ -384,9 +388,7 @@
             this.DsSexo,
             this.DsEstadoCivil,
             this.NrRG,
-            this.NrCPF,
             this.DsEndereco,
-            this.DsStatus,
             this.DsCidade,
             this.Editar,
             this.Excluir});
@@ -394,6 +396,57 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(645, 122);
             this.dgvCliente.TabIndex = 66;
+            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
+            this.dgvCliente.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCliente_CellFormatting);
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Ativado",
+            "Pendente",
+            "Desativado",
+            "Ativado",
+            "Pendente",
+            "Desativado"});
+            this.cbStatus.Location = new System.Drawing.Point(475, 234);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(83, 21);
+            this.cbStatus.TabIndex = 17;
+            // 
+            // bttExcluir
+            // 
+            this.bttExcluir.Location = new System.Drawing.Point(309, 273);
+            this.bttExcluir.Name = "bttExcluir";
+            this.bttExcluir.Size = new System.Drawing.Size(75, 23);
+            this.bttExcluir.TabIndex = 19;
+            this.bttExcluir.Text = "Excluir";
+            this.bttExcluir.UseVisualStyleBackColor = true;
+            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
+            // 
+            // bttAtualizar
+            // 
+            this.bttAtualizar.Location = new System.Drawing.Point(443, 273);
+            this.bttAtualizar.Name = "bttAtualizar";
+            this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.bttAtualizar.TabIndex = 20;
+            this.bttAtualizar.Text = "Atualizar";
+            this.bttAtualizar.UseVisualStyleBackColor = true;
+            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::TESTE.Properties.Resources.edicao;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::TESTE.Properties.Resources.exclusão;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // CdPessoa
             // 
@@ -408,6 +461,18 @@
             this.NmPessoa.HeaderText = "Nome";
             this.NmPessoa.Name = "NmPessoa";
             this.NmPessoa.ReadOnly = true;
+            // 
+            // NrCPF
+            // 
+            this.NrCPF.DataPropertyName = "NrCPF";
+            this.NrCPF.HeaderText = "CPF";
+            this.NrCPF.Name = "NrCPF";
+            // 
+            // DsStatus
+            // 
+            this.DsStatus.DataPropertyName = "DsStatus";
+            this.DsStatus.HeaderText = "Status";
+            this.DsStatus.Name = "DsStatus";
             // 
             // DsCEP
             // 
@@ -487,24 +552,12 @@
             this.NrRG.Name = "NrRG";
             this.NrRG.Visible = false;
             // 
-            // NrCPF
-            // 
-            this.NrCPF.DataPropertyName = "NrCPF";
-            this.NrCPF.HeaderText = "CPF";
-            this.NrCPF.Name = "NrCPF";
-            // 
             // DsEndereco
             // 
             this.DsEndereco.DataPropertyName = "DsEndereco";
             this.DsEndereco.HeaderText = "Endereço";
             this.DsEndereco.Name = "DsEndereco";
             this.DsEndereco.Visible = false;
-            // 
-            // DsStatus
-            // 
-            this.DsStatus.DataPropertyName = "DsStatus";
-            this.DsStatus.HeaderText = "Status";
-            this.DsStatus.Name = "DsStatus";
             // 
             // DsCidade
             // 
@@ -515,50 +568,19 @@
             // 
             // Editar
             // 
-            this.Editar.HeaderText = "Editar";
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::TESTE.Properties.Resources.Icone_Edit___Copia;
             this.Editar.Name = "Editar";
             this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.ToolTipText = "Clieque para editar o Cliente";
             // 
             // Excluir
             // 
-            this.Excluir.HeaderText = "Excluir";
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::TESTE.Properties.Resources.Icone_Delete___Copia;
             this.Excluir.Name = "Excluir";
             this.Excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Ativado",
-            "Pendente",
-            "Desativado",
-            "Ativado",
-            "Pendente",
-            "Desativado"});
-            this.cbStatus.Location = new System.Drawing.Point(475, 234);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(83, 21);
-            this.cbStatus.TabIndex = 17;
-            // 
-            // bttExcluir
-            // 
-            this.bttExcluir.Location = new System.Drawing.Point(309, 273);
-            this.bttExcluir.Name = "bttExcluir";
-            this.bttExcluir.Size = new System.Drawing.Size(75, 23);
-            this.bttExcluir.TabIndex = 19;
-            this.bttExcluir.Text = "Excluir";
-            this.bttExcluir.UseVisualStyleBackColor = true;
-            this.bttExcluir.Click += new System.EventHandler(this.bttExcluir_Click);
-            // 
-            // bttAtualizar
-            // 
-            this.bttAtualizar.Location = new System.Drawing.Point(443, 273);
-            this.bttAtualizar.Name = "bttAtualizar";
-            this.bttAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.bttAtualizar.TabIndex = 20;
-            this.bttAtualizar.Text = "Atualizar";
-            this.bttAtualizar.UseVisualStyleBackColor = true;
-            this.bttAtualizar.Click += new System.EventHandler(this.bttAtualizar_Click);
+            this.Excluir.ToolTipText = "Clieque para excluir Cliente";
             // 
             // frmCadastroCliente
             // 
@@ -603,7 +625,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro Cliente";
+            this.Text = "Registro Cliente";
             this.Load += new System.EventHandler(this.frmCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
@@ -647,8 +669,14 @@
         private System.Windows.Forms.Button bttPesq;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.Button bttExcluir;
+        private System.Windows.Forms.Button bttAtualizar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NmPessoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrCPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DsStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCEP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefone;
@@ -660,13 +688,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DsSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn NrRG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NrCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsEndereco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DsStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCidade;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Excluir;
-        private System.Windows.Forms.Button bttExcluir;
-        private System.Windows.Forms.Button bttAtualizar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
     }
 }

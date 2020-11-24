@@ -100,7 +100,7 @@ namespace TESTE
             pDAL.InserirFuncionario(objPessoa);
 
 
-            MessageBox.Show("Funcionario cadastrada com sucesso");
+            MessageBox.Show("Funcionario cadastrada com sucesso", "Cadastrado");
 
             LimparCadastro();
             CarregarFuncionario();
@@ -109,13 +109,28 @@ namespace TESTE
 
         private void bttExcluir_Click_1(object sender, EventArgs e)
         {
-            Pessoa objPessoa = new Pessoa();
-            objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
+            DialogResult OpcaoExcluir = new DialogResult();
+            OpcaoExcluir = MessageBox.Show("Deseja excluir esse usuario", "Atenção", MessageBoxButtons.YesNo);
 
-            DALPessoa pDAL = new DALPessoa();
-            pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
-            CarregarFuncionario();
-            MessageBox.Show("Funcionario excluida com sucesso");
+            if (OpcaoExcluir == DialogResult.Yes)
+            {
+
+                Pessoa objPessoa = new Pessoa();
+                objPessoa.CdPessoa = Convert.ToInt32(txtCodigo.Text);
+
+                DALPessoa pDAL = new DALPessoa();
+                pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
+                MessageBox.Show("Funcionario excluido com sucesso","Excluido");
+
+                CarregarFuncionario();
+            }
+
+            else
+            {
+                MessageBox.Show("Exclusão cancelada","Cancelado");
+
+            }
+
 
 
         }
@@ -159,7 +174,7 @@ namespace TESTE
             pDAL.AtualizarFuncionario(objPessoa);
 
 
-            MessageBox.Show("Funcionario atualizado com sucesso");
+            MessageBox.Show("Funcionario atualizado com sucesso","Atualizado");
 
             LimparCadastro();
             CarregarFuncionario();
@@ -213,7 +228,82 @@ namespace TESTE
 
         private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int CdPessoa = Convert.ToInt32(dgvFuncionario.Rows[e.RowIndex].Cells["CdPessoa"].Value.ToString());
 
+            if (dgvFuncionario.Columns[e.ColumnIndex] == dgvFuncionario.Columns["Editar"])
+            {
+                DALPessoa pDAL = new DALPessoa();
+                Pessoa pessoa = pDAL.ObterFuncionario(CdPessoa);
+
+                if (pessoa == null)
+                {
+                    MessageBox.Show("Cliente não encontrada.");
+                }
+
+                else
+                {
+                    txtNome.Text = pessoa.NmPessoa;
+                    dtpDtNasc.Value = pessoa.DtNascimento;
+                    rbFeminino.Checked = pessoa.DsSexo == 'F';
+                    rbMasculino.Checked = pessoa.DsSexo == 'M';
+                    switch (pessoa.DsEstadoCivil)
+                    {
+                        case 'S':
+                            cbEstado.Text = "Solteiro";
+                            break;
+                        case 'C':
+                            cbEstado.Text = "Casado";
+                            break;
+                        default:
+                            cbEstado.Text = "Divorciado";
+                            break;
+                    }
+                    mtbRG.Text = pessoa.NrRG;
+                    mtbCPF.Text = pessoa.NrCPF;
+                    txtEndereco.Text = pessoa.DsEndereco;
+                    txtEstado.Text = pessoa.DsEstado;
+                    txtCidade.Text = pessoa.DsCidade;
+                    mtbCEP.Text = pessoa.DsCEP;
+                    txtEmail.Text = pessoa.DsEmail;
+                    mtbTel.Text = pessoa.NrTelefone;
+                    mtbCel.Text = pessoa.NrCelular;
+                    cbStatus.Text = pessoa.DsStatus;
+
+                }
+            }
+            else if (dgvFuncionario.Columns[e.ColumnIndex] == dgvFuncionario.Columns["Excluir"])
+            {
+
+
+                DialogResult OpcaoExcluir = new DialogResult();
+                OpcaoExcluir = MessageBox.Show("Deseja excluir esse funcionario", "Atenção", MessageBoxButtons.YesNo);
+
+                if (OpcaoExcluir == DialogResult.Yes)
+                {
+
+                    Pessoa objPessoa = new Pessoa();
+                    objPessoa.CdPessoa = Convert.ToInt32(dgvFuncionario.Rows[e.RowIndex].Cells["CdPessoa"].Value.ToString()); 
+
+                    DALPessoa pDAL = new DALPessoa();
+                    pDAL.ExcluirFuncionario(objPessoa.CdPessoa);
+                    MessageBox.Show("Funcionario excluido com sucesso","Excluido");
+
+                    CarregarFuncionario();
+                }
+
+                else
+                {
+                    MessageBox.Show("Exclusão cancelada","Cancelado");
+
+                }
+
+            }
+        }
+
+        private void dgvFuncionario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dgvFuncionario.Rows[e.RowIndex].Cells["Editar"].ToolTipText = "Clique aqui para editar.";
+            dgvFuncionario.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Clique aqui para excluir.";
         }
     }
 }

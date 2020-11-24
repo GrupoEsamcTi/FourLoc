@@ -63,6 +63,7 @@
             this.bttExcluir = new System.Windows.Forms.Button();
             this.bttCad = new System.Windows.Forms.Button();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.CdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NmPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NrCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,9 +81,8 @@
             this.NrRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -388,8 +388,6 @@
             // 
             // dgvFuncionario
             // 
-            this.dgvFuncionario.AllowUserToAddRows = false;
-            this.dgvFuncionario.AllowUserToDeleteRows = false;
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CdPessoa,
@@ -413,156 +411,10 @@
             this.Excluir});
             this.dgvFuncionario.Location = new System.Drawing.Point(12, 334);
             this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.Size = new System.Drawing.Size(645, 122);
             this.dgvFuncionario.TabIndex = 22;
             this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
-            // 
-            // CdPessoa
-            // 
-            this.CdPessoa.DataPropertyName = "CdPessoa";
-            this.CdPessoa.HeaderText = "Código";
-            this.CdPessoa.Name = "CdPessoa";
-            this.CdPessoa.ReadOnly = true;
-            // 
-            // NmPessoa
-            // 
-            this.NmPessoa.DataPropertyName = "NmPessoa";
-            this.NmPessoa.HeaderText = "Nome";
-            this.NmPessoa.Name = "NmPessoa";
-            this.NmPessoa.ReadOnly = true;
-            // 
-            // NrCPF
-            // 
-            this.NrCPF.DataPropertyName = "NrCPF";
-            this.NrCPF.HeaderText = "CPF";
-            this.NrCPF.Name = "NrCPF";
-            this.NrCPF.ReadOnly = true;
-            // 
-            // DsStatus
-            // 
-            this.DsStatus.DataPropertyName = "DsStatus";
-            this.DsStatus.HeaderText = "Status";
-            this.DsStatus.Name = "DsStatus";
-            this.DsStatus.ReadOnly = true;
-            // 
-            // DsCEP
-            // 
-            this.DsCEP.DataPropertyName = "DsCEP";
-            this.DsCEP.HeaderText = "CEP";
-            this.DsCEP.Name = "DsCEP";
-            this.DsCEP.ReadOnly = true;
-            this.DsCEP.Visible = false;
-            // 
-            // DsEstado
-            // 
-            this.DsEstado.DataPropertyName = "DsEstado";
-            this.DsEstado.HeaderText = "Estado";
-            this.DsEstado.Name = "DsEstado";
-            this.DsEstado.ReadOnly = true;
-            this.DsEstado.Visible = false;
-            // 
-            // NrTelefone
-            // 
-            this.NrTelefone.DataPropertyName = "NrTelefone";
-            this.NrTelefone.HeaderText = "Telefone";
-            this.NrTelefone.Name = "NrTelefone";
-            this.NrTelefone.ReadOnly = true;
-            this.NrTelefone.Visible = false;
-            // 
-            // NrCelular
-            // 
-            this.NrCelular.DataPropertyName = "NrCelular";
-            this.NrCelular.HeaderText = "Celular";
-            this.NrCelular.Name = "NrCelular";
-            this.NrCelular.ReadOnly = true;
-            this.NrCelular.Visible = false;
-            // 
-            // DsEmail
-            // 
-            this.DsEmail.DataPropertyName = "DsEmail";
-            this.DsEmail.HeaderText = "Email";
-            this.DsEmail.Name = "DsEmail";
-            this.DsEmail.ReadOnly = true;
-            this.DsEmail.Visible = false;
-            // 
-            // DtNascimento
-            // 
-            this.DtNascimento.DataPropertyName = "DtNascimento";
-            this.DtNascimento.HeaderText = "Data Nasc";
-            this.DtNascimento.Name = "DtNascimento";
-            this.DtNascimento.ReadOnly = true;
-            this.DtNascimento.Visible = false;
-            // 
-            // DsPais
-            // 
-            this.DsPais.DataPropertyName = "DsPais";
-            this.DsPais.HeaderText = "Pais";
-            this.DsPais.Name = "DsPais";
-            this.DsPais.ReadOnly = true;
-            this.DsPais.Visible = false;
-            // 
-            // DsTipo
-            // 
-            this.DsTipo.DataPropertyName = "DsTipo";
-            this.DsTipo.HeaderText = "Tipo";
-            this.DsTipo.Name = "DsTipo";
-            this.DsTipo.ReadOnly = true;
-            this.DsTipo.Visible = false;
-            // 
-            // DsSexo
-            // 
-            this.DsSexo.DataPropertyName = "DsSexo";
-            this.DsSexo.HeaderText = "Sexo";
-            this.DsSexo.Name = "DsSexo";
-            this.DsSexo.ReadOnly = true;
-            this.DsSexo.Visible = false;
-            // 
-            // DsEstadoCivil
-            // 
-            this.DsEstadoCivil.DataPropertyName = "DsEstadoCivil";
-            this.DsEstadoCivil.HeaderText = "Estado Civil";
-            this.DsEstadoCivil.Name = "DsEstadoCivil";
-            this.DsEstadoCivil.ReadOnly = true;
-            this.DsEstadoCivil.Visible = false;
-            // 
-            // NrRG
-            // 
-            this.NrRG.DataPropertyName = "NrRG";
-            this.NrRG.HeaderText = "RG";
-            this.NrRG.Name = "NrRG";
-            this.NrRG.ReadOnly = true;
-            this.NrRG.Visible = false;
-            // 
-            // DsEndereco
-            // 
-            this.DsEndereco.DataPropertyName = "DsEndereco";
-            this.DsEndereco.HeaderText = "Endereço";
-            this.DsEndereco.Name = "DsEndereco";
-            this.DsEndereco.ReadOnly = true;
-            this.DsEndereco.Visible = false;
-            // 
-            // DsCidade
-            // 
-            this.DsCidade.DataPropertyName = "DsCidade";
-            this.DsCidade.HeaderText = "Cidade";
-            this.DsCidade.Name = "DsCidade";
-            this.DsCidade.ReadOnly = true;
-            this.DsCidade.Visible = false;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Excluir
-            // 
-            this.Excluir.HeaderText = "Excluir";
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
-            this.Excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFuncionario.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvFuncionario_CellFormatting);
             // 
             // cbStatus
             // 
@@ -575,6 +427,135 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(83, 21);
             this.cbStatus.TabIndex = 23;
+            // 
+            // CdPessoa
+            // 
+            this.CdPessoa.DataPropertyName = "CdPessoa";
+            this.CdPessoa.HeaderText = "Código";
+            this.CdPessoa.Name = "CdPessoa";
+            // 
+            // NmPessoa
+            // 
+            this.NmPessoa.DataPropertyName = "NmPessoa";
+            this.NmPessoa.HeaderText = "Nome";
+            this.NmPessoa.Name = "NmPessoa";
+            // 
+            // NrCPF
+            // 
+            this.NrCPF.DataPropertyName = "NrCPF";
+            this.NrCPF.HeaderText = "CPF";
+            this.NrCPF.Name = "NrCPF";
+            // 
+            // DsStatus
+            // 
+            this.DsStatus.DataPropertyName = "DsStatus";
+            this.DsStatus.HeaderText = "Status";
+            this.DsStatus.Name = "DsStatus";
+            // 
+            // DsCEP
+            // 
+            this.DsCEP.DataPropertyName = "DsCEP";
+            this.DsCEP.HeaderText = "CEP";
+            this.DsCEP.Name = "DsCEP";
+            this.DsCEP.Visible = false;
+            // 
+            // DsEstado
+            // 
+            this.DsEstado.DataPropertyName = "DsEstado";
+            this.DsEstado.HeaderText = "Estado";
+            this.DsEstado.Name = "DsEstado";
+            this.DsEstado.Visible = false;
+            // 
+            // NrTelefone
+            // 
+            this.NrTelefone.DataPropertyName = "NrTelefone";
+            this.NrTelefone.HeaderText = "Telefone";
+            this.NrTelefone.Name = "NrTelefone";
+            this.NrTelefone.Visible = false;
+            // 
+            // NrCelular
+            // 
+            this.NrCelular.DataPropertyName = "NrCelular";
+            this.NrCelular.HeaderText = "Celular";
+            this.NrCelular.Name = "NrCelular";
+            this.NrCelular.Visible = false;
+            // 
+            // DsEmail
+            // 
+            this.DsEmail.DataPropertyName = "DsEmail";
+            this.DsEmail.HeaderText = "Email";
+            this.DsEmail.Name = "DsEmail";
+            this.DsEmail.Visible = false;
+            // 
+            // DtNascimento
+            // 
+            this.DtNascimento.DataPropertyName = "DtNascimento";
+            this.DtNascimento.HeaderText = "Data Nasc";
+            this.DtNascimento.Name = "DtNascimento";
+            this.DtNascimento.Visible = false;
+            // 
+            // DsPais
+            // 
+            this.DsPais.DataPropertyName = "DsPais";
+            this.DsPais.HeaderText = "Pais";
+            this.DsPais.Name = "DsPais";
+            this.DsPais.Visible = false;
+            // 
+            // DsTipo
+            // 
+            this.DsTipo.DataPropertyName = "DsTipo";
+            this.DsTipo.HeaderText = "Tipo";
+            this.DsTipo.Name = "DsTipo";
+            this.DsTipo.Visible = false;
+            // 
+            // DsSexo
+            // 
+            this.DsSexo.DataPropertyName = "DsSexo";
+            this.DsSexo.HeaderText = "Sexo";
+            this.DsSexo.Name = "DsSexo";
+            this.DsSexo.Visible = false;
+            // 
+            // DsEstadoCivil
+            // 
+            this.DsEstadoCivil.DataPropertyName = "DsEstadoCivil";
+            this.DsEstadoCivil.HeaderText = "Estado Civil";
+            this.DsEstadoCivil.Name = "DsEstadoCivil";
+            this.DsEstadoCivil.Visible = false;
+            // 
+            // NrRG
+            // 
+            this.NrRG.DataPropertyName = "NrRG";
+            this.NrRG.HeaderText = "RG";
+            this.NrRG.Name = "NrRG";
+            this.NrRG.Visible = false;
+            // 
+            // DsEndereco
+            // 
+            this.DsEndereco.DataPropertyName = "DsEndereco";
+            this.DsEndereco.HeaderText = "Endereço";
+            this.DsEndereco.Name = "DsEndereco";
+            this.DsEndereco.Visible = false;
+            // 
+            // DsCidade
+            // 
+            this.DsCidade.DataPropertyName = "DsCidade";
+            this.DsCidade.HeaderText = "Cidade";
+            this.DsCidade.Name = "DsCidade";
+            this.DsCidade.Visible = false;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::TESTE.Properties.Resources.Icone_Edit___Copia;
+            this.Editar.Name = "Editar";
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Excluir
+            // 
+            this.Excluir.HeaderText = "";
+            this.Excluir.Image = global::TESTE.Properties.Resources.Icone_Delete___Copia;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // frmCadastroFuncionario
             // 
@@ -619,7 +600,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCadastroFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro Funcionario";
+            this.Text = "Registro Funcionario";
             this.Load += new System.EventHandler(this.frmCadastroFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
@@ -664,6 +645,7 @@
         private System.Windows.Forms.Button bttExcluir;
         private System.Windows.Forms.Button bttCad;
         private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NmPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn NrCPF;
@@ -681,8 +663,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NrRG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn DsCidade;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Excluir;
-        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
     }
 }

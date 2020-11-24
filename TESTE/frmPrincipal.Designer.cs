@@ -57,11 +57,11 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.funcionarioToolStripMenuItem,
             this.clienteToolStripMenuItem,
+            this.artistaToolStripMenuItem,
+            this.gêneroToolStripMenuItem,
             this.filmeToolStripMenuItem,
             this.locaçãoToolStripMenuItem,
-            this.dEToolStripMenuItem,
-            this.artistaToolStripMenuItem,
-            this.gêneroToolStripMenuItem});
+            this.dEToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.cadastroToolStripMenuItem.Text = "Registro";
@@ -70,49 +70,49 @@
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionario";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // filmeToolStripMenuItem
             // 
             this.filmeToolStripMenuItem.Name = "filmeToolStripMenuItem";
-            this.filmeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.filmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.filmeToolStripMenuItem.Text = "Filme";
             this.filmeToolStripMenuItem.Click += new System.EventHandler(this.filmeToolStripMenuItem_Click);
             // 
             // locaçãoToolStripMenuItem
             // 
             this.locaçãoToolStripMenuItem.Name = "locaçãoToolStripMenuItem";
-            this.locaçãoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.locaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.locaçãoToolStripMenuItem.Text = "Locação";
             this.locaçãoToolStripMenuItem.Click += new System.EventHandler(this.locaçãoToolStripMenuItem_Click);
             // 
             // dEToolStripMenuItem
             // 
             this.dEToolStripMenuItem.Name = "dEToolStripMenuItem";
-            this.dEToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.dEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dEToolStripMenuItem.Text = "Devolução";
             this.dEToolStripMenuItem.Click += new System.EventHandler(this.dEToolStripMenuItem_Click);
             // 
             // artistaToolStripMenuItem
             // 
             this.artistaToolStripMenuItem.Name = "artistaToolStripMenuItem";
-            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.artistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.artistaToolStripMenuItem.Text = "Artista";
             this.artistaToolStripMenuItem.Click += new System.EventHandler(this.artistaToolStripMenuItem_Click);
             // 
             // gêneroToolStripMenuItem
             // 
             this.gêneroToolStripMenuItem.Name = "gêneroToolStripMenuItem";
-            this.gêneroToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.gêneroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gêneroToolStripMenuItem.Text = "Gênero";
             this.gêneroToolStripMenuItem.Click += new System.EventHandler(this.gêneroToolStripMenuItem_Click);
             // 
