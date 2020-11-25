@@ -50,6 +50,8 @@ namespace TESTE
             objItem.DsAtores = txtAtores.Text;
             objItem.DsDiretor = txtDiretor.Text;
             objItem.DsFotoCapa = (base64image);
+            objItem.DsAno = mtbAno.Text;
+            objItem.DsTipo = cbTipo.Text;
 
 
             DALItem iDAL = new DALItem();
