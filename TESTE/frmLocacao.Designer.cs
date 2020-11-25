@@ -38,22 +38,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.dtpRetirada = new System.Windows.Forms.DateTimePicker();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbVl = new System.Windows.Forms.MaskedTextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtCdBarras = new System.Windows.Forms.TextBox();
             this.bttPesq = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.mtbCPF = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbVlR = new System.Windows.Forms.MaskedTextBox();
             this.bttLocacao = new System.Windows.Forms.Button();
             this.cbListarF = new System.Windows.Forms.ComboBox();
             this.cbListaNomeC = new System.Windows.Forms.ComboBox();
             this.bttPre = new System.Windows.Forms.Button();
             this.bttPTitulo = new System.Windows.Forms.Button();
+            this.cbCBarras = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label14
@@ -136,6 +136,7 @@
             this.dtpDevolucao.Size = new System.Drawing.Size(97, 20);
             this.dtpDevolucao.TabIndex = 12;
             this.dtpDevolucao.Value = new System.DateTime(2020, 11, 22, 0, 0, 0, 0);
+            this.dtpDevolucao.ValueChanged += new System.EventHandler(this.dtpDevolucao_ValueChanged);
             // 
             // dtpRetirada
             // 
@@ -145,14 +146,15 @@
             this.dtpRetirada.Size = new System.Drawing.Size(97, 20);
             this.dtpRetirada.TabIndex = 11;
             this.dtpRetirada.Value = new System.DateTime(2020, 11, 7, 13, 56, 23, 0);
+            this.dtpRetirada.ValueChanged += new System.EventHandler(this.dtpRetirada_ValueChanged);
             // 
-            // maskedTextBox1
+            // mtbVl
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(123, 159);
-            this.maskedTextBox1.Mask = " 0000,00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(71, 20);
-            this.maskedTextBox1.TabIndex = 8;
+            this.mtbVl.Location = new System.Drawing.Point(123, 159);
+            this.mtbVl.Mask = " 00,00";
+            this.mtbVl.Name = "mtbVl";
+            this.mtbVl.Size = new System.Drawing.Size(71, 20);
+            this.mtbVl.TabIndex = 8;
             // 
             // txtTitulo
             // 
@@ -160,13 +162,6 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(180, 20);
             this.txtTitulo.TabIndex = 7;
-            // 
-            // txtCdBarras
-            // 
-            this.txtCdBarras.Location = new System.Drawing.Point(135, 117);
-            this.txtCdBarras.Name = "txtCdBarras";
-            this.txtCdBarras.Size = new System.Drawing.Size(68, 20);
-            this.txtCdBarras.TabIndex = 6;
             // 
             // bttPesq
             // 
@@ -211,17 +206,17 @@
             this.label5.TabIndex = 114;
             this.label5.Text = "Pago";
             // 
-            // comboBox2
+            // cbPago
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbPago.FormattingEnabled = true;
+            this.cbPago.Items.AddRange(new object[] {
             "Pago",
             "Parcial",
             "Não "});
-            this.comboBox2.Location = new System.Drawing.Point(398, 159);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(63, 21);
-            this.comboBox2.TabIndex = 10;
+            this.cbPago.Location = new System.Drawing.Point(398, 159);
+            this.cbPago.Name = "cbPago";
+            this.cbPago.Size = new System.Drawing.Size(63, 21);
+            this.cbPago.TabIndex = 10;
             // 
             // label6
             // 
@@ -232,13 +227,13 @@
             this.label6.TabIndex = 116;
             this.label6.Text = "Vl Recebido";
             // 
-            // maskedTextBox3
+            // mtbVlR
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(271, 159);
-            this.maskedTextBox3.Mask = " 0000,00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(71, 20);
-            this.maskedTextBox3.TabIndex = 9;
+            this.mtbVlR.Location = new System.Drawing.Point(271, 159);
+            this.mtbVlR.Mask = " 00,00";
+            this.mtbVlR.Name = "mtbVlR";
+            this.mtbVlR.Size = new System.Drawing.Size(71, 20);
+            this.mtbVlR.TabIndex = 9;
             // 
             // bttLocacao
             // 
@@ -248,6 +243,7 @@
             this.bttLocacao.TabIndex = 13;
             this.bttLocacao.Text = "Locação";
             this.bttLocacao.UseVisualStyleBackColor = true;
+            this.bttLocacao.Click += new System.EventHandler(this.bttLocacao_Click);
             // 
             // cbListarF
             // 
@@ -293,21 +289,35 @@
             this.bttPTitulo.Size = new System.Drawing.Size(28, 25);
             this.bttPTitulo.TabIndex = 120;
             this.bttPTitulo.UseVisualStyleBackColor = true;
+            this.bttPTitulo.Click += new System.EventHandler(this.bttPTitulo_Click);
+            // 
+            // cbCBarras
+            // 
+            this.cbCBarras.FormattingEnabled = true;
+            this.cbCBarras.Items.AddRange(new object[] {
+            "Pago",
+            "Parcial",
+            "Não "});
+            this.cbCBarras.Location = new System.Drawing.Point(135, 117);
+            this.cbCBarras.Name = "cbCBarras";
+            this.cbCBarras.Size = new System.Drawing.Size(68, 21);
+            this.cbCBarras.TabIndex = 121;
             // 
             // frmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 286);
+            this.Controls.Add(this.cbCBarras);
             this.Controls.Add(this.bttPTitulo);
             this.Controls.Add(this.bttPre);
             this.Controls.Add(this.cbListaNomeC);
             this.Controls.Add(this.cbListarF);
             this.Controls.Add(this.bttLocacao);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.mtbVlR);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbPago);
             this.Controls.Add(this.mtbCPF);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
@@ -320,9 +330,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.dtpRetirada);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtbVl);
             this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.txtCdBarras);
             this.Controls.Add(this.bttPesq);
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmLocacao";
@@ -346,21 +355,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDevolucao;
         private System.Windows.Forms.DateTimePicker dtpRetirada;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbVl;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtCdBarras;
         private System.Windows.Forms.Button bttPesq;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox mtbCPF;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbPago;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox mtbVlR;
         private System.Windows.Forms.Button bttLocacao;
         private System.Windows.Forms.ComboBox cbListarF;
         private System.Windows.Forms.ComboBox cbListaNomeC;
         private System.Windows.Forms.Button bttPre;
         private System.Windows.Forms.Button bttPTitulo;
+        private System.Windows.Forms.ComboBox cbCBarras;
     }
 }

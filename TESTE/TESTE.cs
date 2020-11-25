@@ -25,7 +25,7 @@ namespace TESTE
         {
             string nmFotoCapa = txtTeste.Text;
 
-            string caminho = $@"C:\Users\MISL\FourLoc\Imagens\{nmFotoCapa}";
+            string caminho = $@"C:\Users\MISL\FourLoc\Imagens\Capa\{nmFotoCapa}";
 
             var Imagem = File.ReadAllBytes(caminho);
 

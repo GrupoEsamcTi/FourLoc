@@ -27,7 +27,7 @@ namespace Models
 
         public decimal NrMulta { get; set; }
 
-        public char Recebido { get; set; }
+        public string Recebido { get; set; }
 
 
         public string DsTitulo { get; set; }
@@ -52,5 +52,6 @@ namespace Models
 
         public string DsFotoCapa { get; set; }
 
-   }
+
+    }
 }

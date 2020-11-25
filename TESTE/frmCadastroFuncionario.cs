@@ -242,6 +242,7 @@ namespace TESTE
 
                 else
                 {
+                    txtCodigo.Text = pessoa.CdPessoa.ToString();
                     txtNome.Text = pessoa.NmPessoa;
                     dtpDtNasc.Value = pessoa.DtNascimento;
                     rbFeminino.Checked = pessoa.DsSexo == 'F';

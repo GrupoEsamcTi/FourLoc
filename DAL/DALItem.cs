@@ -302,7 +302,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_GENERO WHERE CODIGO_I = @cod";
+            string sql = "SELECT * FROM TBL_GENERO WHERE CODIGO_G = @cod";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@cod", cdItem);
@@ -453,10 +453,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "INSERT INTO TBL_LOCACAO " +
-                "SELECT " +
-                "" +
-                "VALUES (@cdp,@cpf,@nm,@dtl,@dtd,@cdb,@tit,@vll,@vlr,@rec)";
+            string sql = "INSERT INTO TBL_LOCACAO VALUES (@cdp,@cpf,@nm,@dtl,@dtd,@cdb,@tit,@vll,@vlr,@rec)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cdp", objPessoa.CdPessoa);
             cmd.Parameters.AddWithValue("@cpf", objPessoa.NrCPF);
@@ -475,15 +472,43 @@ namespace DAL
 
             conn.Close();
 
+        }
+
+        public Item ObterTituloValor(string CdBarras)
+
+        {
+            Item item = null;
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT CODIGO_B, TITULO, PRECO FROM TBL_ITEM WHERE CODIGO_B = @cdBarra";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@cdBarra", CdBarras);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows && dr.Read())
+            {
+
+                item = new Item();
+                item.CdBarras = CdBarras;
+                item.DsTitulo = dr["TITULO"].ToString();
+                item.NrPreco = Convert.ToDecimal(dr["PRECO"]);
 
 
+            }
+
+            conn.Close();
+
+            return item;
 
         }
 
 
-
-       
-  public List<Pessoa> ListarLocacaoF()
+        public List<Pessoa> ListarLocacaoF()
         {
             List<Pessoa> listaPessoa = new List<Pessoa>();
 
@@ -569,7 +594,7 @@ namespace DAL
 
             conn.Open();
 
-            string sql = "SELECT * FROM TBL_ITEM";
+            string sql = "SELECT * FROM TBL_LOCACAO";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -578,19 +603,24 @@ namespace DAL
             if (dr.HasRows)
             {
                 Item objItem;
+                Pessoa objPessoa;
                 while (dr.Read())
                 {
 
                     objItem = new Item();
-                    objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
+                    objPessoa = new Pessoa();
+                    objItem.CdLocacao = Convert.ToInt32(dr["CODIGO_L"]);
+                    objPessoa.CdPessoa = Convert.ToInt32(dr["CODIGO_F"]);
+                    objPessoa.NrCPF = dr["CPF_C"].ToString();
+                    objPessoa.NmPessoa = dr["CPF_C"].ToString();
+                    objItem.DtLocacao = Convert.ToDateTime(dr["DATA_LOCACAO"]);
+                    objItem.DtDevolucao = Convert.ToDateTime(dr["DATA_DEVOLUCAO"]);
                     objItem.CdBarras = dr["CODIGO_B"].ToString();
                     objItem.DsTitulo = dr["TITULO"].ToString();
-                    objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
-                    objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
-                    objItem.NrValorCusto = Convert.ToDecimal(dr["VALOR_CUSTO"]);
-                    objItem.DsSituacao = dr["SITUACAO"].ToString();
-                    objItem.DsAtores = dr["ATORES_P"].ToString();
-                    objItem.DsDiretor = dr["DIRETOR"].ToString();
+                    objItem.Vl_Locacao = Convert.ToDecimal(dr["VALOR_LOCACAO"]);
+                    objItem.Vl_Recebido = Convert.ToDecimal(dr["VALOR_RECEBIDO"]);
+                    objItem.Recebido = dr["RECEBIDO"].ToString();
+
 
 
                     listaItem.Add(objItem);

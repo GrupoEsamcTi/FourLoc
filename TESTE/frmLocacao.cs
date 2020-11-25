@@ -34,6 +34,13 @@ namespace TESTE
             cbListaNomeC.DisplayMember = "NmPessoa";
             cbListaNomeC.DataSource = iDAL.ListarLocacaoC();
 
+            cbCBarras.DisplayMember = "CdBarras";
+            cbCBarras.DataSource = iDAL.ListarLocacao();
+
+            DateTime hoje = DateTime.Now;
+            dtpRetirada.Value = hoje.Date;
+            dtpDevolucao.Value = dtpRetirada.Value.AddDays(5);
+
         }
 
         private void mtbCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -60,6 +67,63 @@ namespace TESTE
                 mtbCPF.Text = pessoa.NrCPF;
 
             }
+        }
+
+        private void bttPTitulo_Click(object sender, EventArgs e)
+        {
+            String CdBarras = cbCBarras.Text;
+
+            DALItem iDAL = new DALItem();
+            Item item = iDAL.ObterTituloValor(CdBarras);
+
+            if (item == null)
+            {
+                MessageBox.Show("Filme não encontrado.");
+            }
+
+            else
+            {
+
+                txtTitulo.Text = item.DsTitulo;
+                mtbVl.Text = item.NrPreco.ToString();
+
+            }
+        }
+
+
+
+        private void bttLocacao_Click(object sender, EventArgs e)
+        {
+            Item objItem = new Item();
+            Pessoa objPessoa = new Pessoa();
+
+            objPessoa.CdPessoa = Convert.ToInt32(cbListarF.Text);
+            objPessoa.NmPessoa = cbListaNomeC.Text;
+            objPessoa.NrCPF = mtbCPF.Text;
+            objItem.CdBarras = cbCBarras.Text;
+            objItem.DsTitulo = txtTitulo.Text;
+            objItem.Vl_Locacao = Convert.ToDecimal(mtbVl.Text);
+            objItem.Vl_Recebido = Convert.ToDecimal(mtbVlR.Text);
+            objItem.Recebido = cbPago.Text;
+            objItem.DtLocacao = Convert.ToDateTime(dtpRetirada.Value);
+            objItem.DtDevolucao = Convert.ToDateTime(dtpDevolucao.Value);
+          
+            DALItem iDAL = new DALItem();
+            iDAL.InserirLocacao(objItem,objPessoa);
+          
+
+
+            MessageBox.Show("Locação executada com sucesso", "Locação");
+        }
+
+        private void dtpRetirada_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDevolucao.Value = dtpRetirada.Value.AddDays(5);
+        }
+
+        private void dtpDevolucao_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
