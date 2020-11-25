@@ -173,6 +173,50 @@ namespace DAL
             return listaItem;
         }
 
+        public List<Item> ListarItemWeb()
+        {
+            List<Item> listaItem = new List<Item>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            string sql = "SELECT * FROM TBL_ITEM";
+
+           
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                Item objItem;
+                while (dr.Read())
+                {
+
+                    objItem = new Item();
+                    objItem.CdFilme = Convert.ToInt32(dr["CODIGO_I"]);
+                    objItem.CdBarras = dr["CODIGO_B"].ToString();
+                    objItem.DsTitulo = dr["TITULO"].ToString();
+                    objItem.NrPreco = Convert.ToDecimal(dr["PRECO"]);
+                    objItem.DtAdquirida = Convert.ToDateTime(dr["DT_ADQUIRIDA"]);
+                    objItem.NrValorCusto = Convert.ToDecimal(dr["VALOR_CUSTO"]);
+                    objItem.DsSituacao = dr["SITUACAO"].ToString();
+                    objItem.DsAtores = dr["ATORES_P"].ToString();
+                    objItem.DsDiretor = dr["DIRETOR"].ToString();
+                    objItem.DsFotoCapa = dr["CAPA_FOTO"].ToString();
+
+
+                    listaItem.Add(objItem);
+                }
+
+            }
+
+            conn.Close();
+
+            return listaItem;
+        }
         public void AtualizarItem(Item objItem)
 
         {

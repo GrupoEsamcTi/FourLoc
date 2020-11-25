@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.bttPesq = new System.Windows.Forms.Button();
@@ -470,6 +470,7 @@
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.Size = new System.Drawing.Size(643, 150);
             this.dgvItem.TabIndex = 101;
+            this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
             // 
             // CdFilme
             // 
@@ -652,6 +653,7 @@
             this.Name = "frmFilme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Filmes";
+            this.Load += new System.EventHandler(this.frmFilme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

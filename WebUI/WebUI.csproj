@@ -67,20 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pesquisa_filmes.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx">
       <BrowseToURL>~/Default.aspx</BrowseToURL>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pesquisa_filmes.aspx.cs">
-      <DependentUpon>Pesquisa_filmes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pesquisa_filmes.aspx.designer.cs">
-      <DependentUpon>Pesquisa_filmes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -109,6 +101,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{7bbc2b10-c450-4283-b0d5-5210ad082409}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{05e0b69f-c664-4f7a-bad3-f47ec04b38c9}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TESTE\GUI.csproj">
+      <Project>{9bea62f6-8534-4dce-9ca3-88f112e504e5}</Project>
+      <Name>GUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

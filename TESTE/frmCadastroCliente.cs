@@ -216,7 +216,7 @@ namespace TESTE
         }
 
 
-    private void CarregarCliente()
+    public void CarregarCliente()
         {
             DALPessoa pDAL = new DALPessoa();
             dgvCliente.DataSource = pDAL.ListarCliente();
@@ -233,7 +233,7 @@ namespace TESTE
             dgvCliente.Rows[e.RowIndex].Cells["Excluir"].ToolTipText = "Clique aqui para excluir.";
         }
 
-        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
 

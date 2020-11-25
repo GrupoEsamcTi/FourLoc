@@ -104,6 +104,16 @@ namespace TESTE
                
              }
         }
+
+        private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmFilme_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

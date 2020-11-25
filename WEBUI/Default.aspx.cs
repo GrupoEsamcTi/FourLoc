@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL;
+using Models;
+
 
 namespace WEBUI
 {
@@ -11,12 +14,25 @@ namespace WEBUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+      
 
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            CarregarItem();
+
+        }
+
+
+        public void CarregarItem()
+        {
+            DALItem iDAL = new DALItem();
+            GridView1.DataSource = iDAL.ListarItemWeb();
         }
     }
+    
 }
